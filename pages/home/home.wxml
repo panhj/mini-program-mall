@@ -1,0 +1,49 @@
+<!--pages/home/home.wxml-->
+<view class="container">
+  <view class="search-container">
+    <view class="search-bar">
+      <input type="text" placeholder="更多惊喜等你发现..." maxlength="15" confirm-type="search"></input>
+      <image></image>
+    </view>
+  </view>
+  <view class="banner-container">
+    <swiper indicator-dots="true" autoplay="true" interval="2000" duration="500" circular="true" indicator-active-color="#fff">
+        <swiper-item>
+          <view class="swiper-item swiper-item-1"></view>
+        </swiper-item>
+        <swiper-item>
+          <view class="swiper-item swiper-item-2"></view>
+        </swiper-item>
+        <swiper-item>
+          <view class="swiper-item swiper-item-3"></view>
+        </swiper-item>
+      </swiper>
+  </view>
+  <view class="coupon-container">
+    <scroll-view scroll-x="true" scroll-left="0">
+        <view class="scroll-item" wx:for="{{coupons}}" wx:key="unique">
+          <text class="p-ab coupon-yuan">¥</text>
+          <text class="p-ab coupon-num">{{item.num}}</text>
+          <text class="p-ab coupon-title">优惠券</text>
+          <text class="p-ab coupon-msg">满{{item.sum}}使用</text>
+        </view>
+        <view class="scroll-item">
+          <text class="p-ab coupon-yuan">¥</text>
+          <text class="p-ab coupon-num">40</text>
+          <text class="p-ab coupon-title">优惠券</text>
+          <text class="p-ab coupon-msg">满299使用</text></view>
+        <view class="scroll-item">
+          <text class="p-ab coupon-yuan">¥</text>
+          <text class="p-ab coupon-num">60</text>
+          <text class="p-ab coupon-title">优惠券</text>
+          <text class="p-ab coupon-msg">满499使用</text>
+        </view>
+        <view class="scroll-item">
+          <text class="p-ab coupon-yuan">¥</text>
+          <text class="p-ab coupon-num">20</text>
+          <text class="p-ab coupon-title">优惠券</text>
+          <text class="p-ab coupon-msg">满199使用</text>
+        </view>
+      </scroll-view>
+  </view>
+</view>

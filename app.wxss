@@ -1,0 +1,14 @@
+/**app.wxss**/
+view {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+.p-ab {
+  position: absolute;
+}
+::-webkit-scrollbar {
+  width: 0;
+  height: 0;
+  color: transparent;
+}
