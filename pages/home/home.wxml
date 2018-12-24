@@ -8,42 +8,47 @@
   </view>
   <view class="banner-container">
     <swiper indicator-dots="true" autoplay="true" interval="2000" duration="500" circular="true" indicator-active-color="#fff">
-        <swiper-item>
-          <view class="swiper-item swiper-item-1"></view>
-        </swiper-item>
-        <swiper-item>
-          <view class="swiper-item swiper-item-2"></view>
-        </swiper-item>
-        <swiper-item>
-          <view class="swiper-item swiper-item-3"></view>
-        </swiper-item>
-      </swiper>
+      <swiper-item>
+        <view class="swiper-item swiper-item-1"></view>
+      </swiper-item>
+      <swiper-item>
+        <view class="swiper-item swiper-item-2"></view>
+      </swiper-item>
+      <swiper-item>
+        <view class="swiper-item swiper-item-3"></view>
+      </swiper-item>
+    </swiper>
   </view>
   <view class="coupon-container">
     <scroll-view scroll-x="true" scroll-left="0">
-        <view class="scroll-item" wx:for="{{coupons}}" wx:key="unique">
-          <text class="p-ab coupon-yuan">¥</text>
-          <text class="p-ab coupon-num">{{item.num}}</text>
-          <text class="p-ab coupon-title">优惠券</text>
-          <text class="p-ab coupon-msg">满{{item.sum}}使用</text>
+      <view class="scroll-item" wx:for="{{coupons}}" wx:key="unique">
+        <text class="p-ab coupon-yuan">¥</text>
+        <text class="p-ab coupon-num">{{item.num}}</text>
+        <text class="p-ab coupon-title">优惠券</text>
+        <text class="p-ab coupon-msg">满{{item.sum}}使用</text>
+      </view>
+    </scroll-view>
+    <view class="coupon-row">
+      <view class="coupon-left">
+        <view class="card">
+          <text class="tip">满包邮</text>
+          <text class="title">断码清仓</text>
+          <text class="abc">NEW ARRIVAL</text>
+          <image src=""></image>
         </view>
-        <view class="scroll-item">
-          <text class="p-ab coupon-yuan">¥</text>
-          <text class="p-ab coupon-num">40</text>
-          <text class="p-ab coupon-title">优惠券</text>
-          <text class="p-ab coupon-msg">满299使用</text></view>
-        <view class="scroll-item">
-          <text class="p-ab coupon-yuan">¥</text>
-          <text class="p-ab coupon-num">60</text>
-          <text class="p-ab coupon-title">优惠券</text>
-          <text class="p-ab coupon-msg">满499使用</text>
+        <view class="card">
+          <text class="tip">满包邮</text>
+          <text class="title">断码清仓</text>
+          <text class="abc">NEW ARRIVAL</text>
+          <image src=""></image>
         </view>
-        <view class="scroll-item">
-          <text class="p-ab coupon-yuan">¥</text>
-          <text class="p-ab coupon-num">20</text>
-          <text class="p-ab coupon-title">优惠券</text>
-          <text class="p-ab coupon-msg">满199使用</text>
-        </view>
-      </scroll-view>
+      </view>
+      <view class="coupon-right">
+        <text style="flex-grow:1"></text>
+        <text>-50%</text>
+        <text>限时秒杀</text>
+        <view style="flex-grow:1"><text>点击进入</text></view>
+      </view>
+    </view>
   </view>
 </view>

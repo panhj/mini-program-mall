@@ -3,6 +3,7 @@
   width: 100%;
   display: flex;
   flex-direction: column;
+  background-color: #ebebeb;
 }
 .banner-container, .search-container, .coupon-container {
   width: 100%;
@@ -45,13 +46,15 @@
 }
 
 .coupon-container {
-  padding: 0 20rpx;
-  margin-top: 20rpx;
+  padding: 20rpx;
+  margin: 20rpx 0;
+  background-color: #fff;
 }
 .coupon-container scroll-view {
   width: 100%;
   white-space: nowrap;
   height: 80rpx;
+  margin-bottom: 20rpx;
 }
 .scroll-item {
   height: 80rpx;
@@ -63,6 +66,9 @@
 }
 .scroll-item:last-child {
   margin-right: 0;
+}
+.scroll-item:active {
+  background-color: #e9e9e9;
 }
 .coupon-yuan {
   top: 10rpx; left: 28rpx;
@@ -84,3 +90,78 @@
   font-size: 19.5rpx;
   color: #999;
 }
+.coupon-row {
+  position: relative;
+}
+.coupon-left {
+  width: 350rpx;
+  height: 360rpx;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.card {
+  background-color: #f2f2f2;
+}
+.card:active {
+  background-color: #e9e9e9;
+}
+.coupon-left .card {
+  width: 100%;
+  height: 175rpx;
+  position: relative;
+}
+.coupon-left .tip {
+  position: absolute;
+  top: 38rpx; left: 20rpx;
+  font-size: 22rpx;
+  background:#b0424a;
+  color:#eee;
+  padding:2rpx 5rpx;
+  border-radius:8rpx;
+}
+.coupon-left .title {
+  position: absolute;
+  top: 73rpx; left: 20rpx;
+  font-size: 32rpx;
+}
+.coupon-left .abc {
+  position: absolute;
+  top: 115rpx; left: 20rpx;
+  font-size: 19rpx;
+  color: #999
+}
+.card image {
+  width: 55%;
+  height: 100%;
+  float: right;
+  background-color: #b1424a12;
+}
+.coupon-right {
+  top:0; right:0;
+  position:absolute;
+  width:350rpx;
+  height:360rpx;
+  background:#b0424a;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  color: #fff;
+}
+.coupon-right:active {
+  background:#9e3c42;
+}
+.coupon-right>text:nth-child(2) {
+  font-size: 60rpx;
+}
+.coupon-right>text:nth-child(3) {
+  font-size: 36rpx;
+  padding-bottom: 10rpx;
+}
+.coupon-right>view>text {
+  font-size: 25rpx;
+  padding:4rpx 23rpx;
+  border:1px solid #fff;
+}
+
