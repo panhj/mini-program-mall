@@ -7,7 +7,7 @@
     </view>
   </view>
   <view class="banner-container">
-    <swiper indicator-dots="true" autoplay="true" interval="2000" duration="500" circular="true" indicator-active-color="#fff">
+    <swiper indicator-dots="true" autoplay="true" interval="6000" duration="500" circular="true" indicator-active-color="#fff">
       <swiper-item>
         <view class="swiper-item swiper-item-1"></view>
       </swiper-item>
@@ -49,6 +49,14 @@
         <text>限时秒杀</text>
         <view style="flex-grow:1"><text>点击进入</text></view>
       </view>
+    </view>
+  </view>
+  <view class="type-container">
+    <view class="card" wx:for="{{types}}" wx:key="unique">
+      <text class="title">{{item.type}}</text>
+      <text class="abc">{{item.en}}</text>
+      <text class="tip">查看分类</text>
+      <image src=""></image>
     </view>
   </view>
 </view>
