@@ -14,6 +14,11 @@ Page({
       { type: '坡跟鞋', en: 'WEDGES' },
       { type: '运动鞋', en: 'SPORTS' },
       { type: '靴子', en: 'BOOTS' },
+    ],
+    news: [
+      { date: '11月11日', money: 299 },
+      { date: '11月11日', money: 899 },
+      { date: '11月11日', money: 499 },
     ]
   }
 })

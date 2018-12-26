@@ -5,10 +5,10 @@
   flex-direction: column;
   background-color: #ebebeb;
 }
-.banner-container, .search-container, .coupon-container {
+.banner-container, .search-container, .coupon-container, .type-container, .new-container {
   width: 100%;
 }
-.coupon-container, .type-container {
+.coupon-container, .type-container, .new-container {
   padding: 0 20rpx;
   background-color: #fff;
 }
@@ -199,3 +199,37 @@
   background-color: #000;
   color: #eee;
 }
+
+.new-pannel {
+  display: flex;
+  justify-content: space-between;
+}
+.new-item {
+  width: 230rpx;
+  text-align: center;
+}
+.new-item image {
+  display: block;
+  width: 230rpx; height: 230rpx;
+  background-color:#e9e9e9;
+}
+.new-item .title {
+  display: block;
+  font-size: 26rpx;
+}
+.new-item .money {
+  position: relative;
+  display: blcok;
+  margin-top: 20rpx;
+  font-size: 20rpx;
+  color: #999;
+}
+.new-item .tip {
+  position: relative;
+  top: -20rpx;
+  display: block;
+  font-size: 18rpx;
+  color: #eee;
+  background-color: #000;
+}
+

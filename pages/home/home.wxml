@@ -59,4 +59,14 @@
       <image src=""></image>
     </view>
   </view>
+  <view class="new-container">
+    <view class="new-pannel">
+      <view class="new-item" wx:for="{{news}}" wx:key="unique">
+        <image src=""></image>
+        <text class="title">{{item.date}}上新</text>
+        <text class="money">RMB {{item.money}}</text>
+        <text class="tip">查看宝贝</text>
+      </view>
+    </view>
+  </view>
 </view>
