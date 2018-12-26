@@ -65,7 +65,7 @@
         <image src=""></image>
         <text class="title">{{item.date}}上新</text>
         <text class="money">RMB {{item.money}}</text>
-        <text class="tip">查看宝贝</text>
+        <view class="tip"><text>查看宝贝</text></view>
       </view>
     </view>
   </view>

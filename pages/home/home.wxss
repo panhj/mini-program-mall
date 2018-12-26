@@ -200,6 +200,10 @@
   color: #eee;
 }
 
+.new-container {
+  padding-top: 10rpx;
+  margin-top: 20rpx;
+}
 .new-pannel {
   display: flex;
   justify-content: space-between;
@@ -210,7 +214,7 @@
 }
 .new-item image {
   display: block;
-  width: 230rpx; height: 230rpx;
+  width: 230rpx; height: 220rpx;
   background-color:#e9e9e9;
 }
 .new-item .title {
@@ -219,16 +223,19 @@
 }
 .new-item .money {
   position: relative;
+  top: -20rpx;
   display: blcok;
-  margin-top: 20rpx;
   font-size: 20rpx;
   color: #999;
 }
 .new-item .tip {
   position: relative;
-  top: -20rpx;
+  top: -18rpx;
   display: block;
   font-size: 18rpx;
+}
+.new-item .tip text {
+  padding: 3rpx 12rpx;
   color: #eee;
   background-color: #000;
 }
