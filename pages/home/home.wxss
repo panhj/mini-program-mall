@@ -5,7 +5,9 @@
   flex-direction: column;
   background-color: #ebebeb;
 }
-.banner-container, .search-container, .coupon-container, .type-container, .new-container {
+.banner-container, .search-container, .coupon-container, .type-container, .new-container, .image-container, .ad-container, .show-container {
+  position: relative;
+  background-color: #fff;
   width: 100%;
 }
 .coupon-container, .type-container, .new-container {
@@ -234,9 +236,80 @@
   display: block;
   font-size: 18rpx;
 }
-.new-item .tip text {
+.new-item .tip text, .ad-text-pannel .tip text {
   padding: 3rpx 12rpx;
   color: #eee;
   background-color: #000;
 }
-
+.ad-image {
+  width: 100%;
+  height: 300rpx;
+  background-color: rgba(177, 66, 74, 0.071);
+}
+.ad-container {
+  width: 100%; height: 250rpx;
+  background-color: #fff;
+  margin-top: 10rpx;
+}
+.ad-container image {
+  position: absolute;
+  top: 0;
+  width: 300rpx;
+  height: 250rpx;
+  background-color: rgba(177, 66, 74, 0.071);
+}
+.ad-l image {
+  right: 0;
+}
+.ad-r image {
+  left: 0;
+}
+.ad-text-pannel {
+  position: absolute;
+  top: 30rpx;
+  text-align: left;
+}
+.ad-l .ad-text-pannel {
+  left: 30rpx;
+}
+.ad-r .ad-text-pannel {
+  left: 400rpx;
+}
+.ad-text-pannel .title {
+  font-size: 30rpx;
+  color: #b0424a;
+  display: blcok;
+}
+.ad-text-pannel .msg {
+  display: block;
+  font-size: 14rpx;
+  color: #999;
+}
+.ad-text-pannel .tip {
+  font-size: 20rpx;
+}
+.show-container  {
+  margin-top: 20rpx;
+}
+.head {
+  width: 100%; height: 30rpx;
+  margin-top: 20rpx;
+  border-bottom: 1px solid #ddd;
+}
+.head view:nth-child(1) {
+  margin-top: 10rpx;
+}
+.head>view {
+  text-align: center;
+  color: #555;
+  line-height:28rpx;
+}
+.head>view>text {
+  background-color: #fff;
+  font-size: 30rpx;
+  padding: 0 50rpx;
+}
+.head>view:nth-child(2) text {
+  font-size: 20rpx;
+  color: #999;
+}
