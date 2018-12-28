@@ -19,6 +19,23 @@ Page({
       { date: '11月11日', money: 299 },
       { date: '11月11日', money: 899 },
       { date: '11月11日', money: 499 },
+    ],
+    goods: [
+      { name: '这是关于一款超级无敌坑人的高跟鞋的说明非常厉害', price: '299', oldPrice: '1299', num: '9999' },
+      { name: 'SAHDSAJDIOASIODJIOASD', price: '299', oldPrice: '1299', num: '9999' },
+      { name: 'SAHDSAJDIOASIODJIOASD', price: '299', oldPrice: '1299', num: '9999' },
+      { name: 'SAHDSAJDIOASIODJIOASD', price: '299', oldPrice: '1299', num: '9999' },
+    ],
+    newmores: [
+      { src: 'http://xxx' },
+      { src: 'http://xxx' },
+      { src: 'http://xxx' },
+      { src: 'http://xxx' },
+      { src: 'http://xxx' },
+      { src: 'http://xxx' },
+      { src: 'http://xxx' },
+      { src: 'http://xxx' },
+      { src: 'http://xxx' },
     ]
   }
 })

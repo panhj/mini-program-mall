@@ -94,14 +94,25 @@
       <view><text>HOT SALE</text></view>
     </view>
     <view class="goods-pannel">
-      <view class="goods-item">
+      <view class="goods-item" wx:for="{{goods}}" wx:key="unique">
         <image></image>
-        <view class="title"><text>CHASDIIOJOISJDJIOJSOIDNL</text></view>
+        <view class="title"><text>{{item.name}}</text></view>
         <view class="foot">
-          <text class="rmb">RMB ¥299</text>
-          <text class="old-rmb">原价 ¥1299</text>
-          <text class="num">销量（9999）</text>
+          <text class="rmb">RMB ¥{{item.price}}</text>
+          <text class="old-rmb">¥{{item.oldPrice}}</text>
+          <text class="num">销量（{{item.num}}）</text>
         </view>
+      </view>
+    </view>
+  </view>
+  <view class="show-container">
+    <view class="head">
+      <view><text>新品推荐</text></view>
+      <view><text>NEW ARRIVAL</text></view>
+    </view>
+    <view class="goods-pannel">
+      <view class="newmore-item" wx:for="{{newmores}}" wx:key="unique">
+        <image src=""></image>
       </view>
     </view>
   </view>
