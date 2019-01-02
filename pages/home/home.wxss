@@ -8,7 +8,7 @@
 image {
   background-color: rgba(177, 66, 74, 0.071);
 }
-.banner-container, .search-container, .coupon-container, .type-container, .new-container, .image-container, .ad-container, .show-container {
+.banner-container, .search-container, .coupon-container, .type-container, .new-container, .image-container, .ad-container, .show-container, .tab-container {
   position: relative;
   background-color: #fff;
   width: 100%;
@@ -243,9 +243,12 @@ image {
   color: #eee;
   background-color: #000;
 }
+.image-container {
+  height: 300rpx;
+}
 .ad-image {
   width: 100%;
-  height: 300rpx;
+  height: 100%;
 }
 .ad-container {
   width: 100%; height: 250rpx;
@@ -360,7 +363,7 @@ image {
 }
 .goods-item .foot .num {
   position: absolute;
-  right: 0; bottom: 1rpx;
+  right: 0; bottom: 0rpx;
   font-size: 22rpx;
   color: #b0424a;
 }
@@ -372,4 +375,70 @@ image {
 }
 .newmore-item image {
   width: 100%; height: 100%;
+}
+
+.tab-container {
+  padding: 20rpx 10rpx 20rpx 10rpx;
+  margin-top: 20rpx;
+}
+.tab-pannel {
+  width: 100%;
+  margin-bottom: 10rpx;
+  display: flex;
+  justify-content: space-between;
+}
+.tab-item {
+  line-height: 40rpx;
+  text-align: center;
+  flex-grow: 1;
+  border: 1rpx solid #ccc;
+  color: #ccc;
+  font-size: 22rpx;
+}
+.tab-active {
+  background-color: #b0424a;
+  border: 1rpx solid #b0424a;
+  color: #fff;
+}
+.tabgoods-pannel {
+  position: relative;
+  width: 100%; height: 480rpx;
+}
+.tabgoods-pannel image:nth-child(1) {
+  position: absolute;
+  width: 480rpx; height: 480rpx;
+  top: 0; left: 0;
+}
+.tabgoods-pannel image:nth-child(2) {
+  position: absolute;
+  width: 240rpx; height: 235rpx;
+  top: 0; right:0;
+}
+.tabgoods-pannel image:nth-child(3) {
+  position: absolute;
+  width: 240rpx; height: 235rpx;
+  bottom: 0; right:0;
+}
+.footicon-pannel {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  margin-top: 10rpx;
+}
+.footicon {
+  width: 120rpx; height: 150rpx;
+  position: relative;
+}
+.footicon image {
+  position: absolute;
+  top: 0; left: 0;
+  width: 120rpx; height: 120rpx;
+}
+.footicon>view {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  font-size: 20rpx;
+  color: #b0424a;
+  text-align: center;
 }

@@ -116,4 +116,37 @@
       </view>
     </view>
   </view>
+  <view class="image-container">
+    <image class="ad-image" scr=""></image>
+  </view>
+  <view class="tab-container">
+    <view class="tab-pannel">
+      <view class="tab-item tab-active">钻石买家最爱</view>
+      <view class="tab-item">收藏排行</view>
+      <view class="tab-item">销量排行</view>
+    </view>
+    <view class="tabgoods-pannel">
+      <image src=""></image>
+      <image src=""></image>
+      <image src=""></image>
+    </view>
+    <view class="footicon-pannel">
+      <view class="footicon">
+        <image src=""></image>
+        <view><text>闪电发货</text></view>
+      </view>
+      <view class="footicon">
+        <image src=""></image>
+        <view><text>实物拍摄</text></view>
+      </view>
+      <view class="footicon">
+        <image src=""></image>
+        <view><text>七天退换</text></view>
+      </view>
+      <view class="footicon">
+        <image src=""></image>
+        <view><text>优质服务</text></view>
+      </view>
+    </view>
+  </view>
 </view>
