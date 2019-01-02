@@ -1,0 +1,46 @@
+<!--pages/goods/goods.wxml-->
+<view class="root">
+   <view class="banner-container">
+    <swiper indicator-dots="true" autoplay="false" duration="500" circular="true" indicator-active-color="#fff">
+      <swiper-item>
+        <view class="swiper-item swiper-item-1"></view>
+      </swiper-item>
+      <swiper-item>
+        <view class="swiper-item swiper-item-2"></view>
+      </swiper-item>
+      <swiper-item>
+        <view class="swiper-item swiper-item-3"></view>
+      </swiper-item>
+    </swiper>
+  </view>
+  <view class="card-container">
+    <view class="head">
+      <view class="title"><text>捷安特ocr5500公路车禧玛诺18速入门</text></view>
+      <view class="price"><text>¥9899/件</text></view>
+    </view>
+    <view class="content">
+      <view class="msg">
+        <text>原价¥9999</text>
+        <text>库存1234件</text>
+      </view>
+      <view class="tip-pannel">
+        <view class="tip-item">
+          <icon type="success" color="rgb(176, 66, 74)" size="20rpx"></icon><text>商家配送</text>
+        </view>
+        <view class="tip-item">
+          <icon type="success" color="rgb(176, 66, 74)" size="20rpx"></icon><text>门店自提</text>
+        </view>
+        <view class="tip-item">
+          <icon type="success" color="rgb(176, 66, 74)" size="20rpx"></icon><text>七天无理由</text>
+        </view>
+      </view>
+      <view class="opt">
+        <view><text>选择尺码规格</text><icon class="navigator-arrow"></icon></view>
+        <view><text>查看评论</text></view>
+      </view>
+    </view>
+  </view>
+  <view class="foot-bar">
+
+  </view>
+</view>

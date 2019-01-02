@@ -29,6 +29,9 @@ image {
   height: 100%;
   border-radius: 10rpx;
 }
+.search-bar image {
+  width: 30rpx; height: 30rpx;
+}
 .search-bar input {
   height: 100%;
   padding: 0 30rpx;
@@ -386,12 +389,14 @@ image {
   margin-bottom: 10rpx;
   display: flex;
   justify-content: space-between;
+  border-left: 1rpx solid #ccc;
 }
 .tab-item {
   line-height: 40rpx;
   text-align: center;
   flex-grow: 1;
   border: 1rpx solid #ccc;
+  border-left: none;
   color: #ccc;
   font-size: 22rpx;
 }

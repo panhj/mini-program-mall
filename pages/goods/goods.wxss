@@ -1,0 +1,71 @@
+/* pages/goods/goods.wxss */
+image {
+  background-color: rgba(177, 66, 74, 0.071);
+}
+.root {
+  width: 100%; height: 100vh;
+  position: relative;
+}
+.banner-container swiper{
+  width: 100%; height: 80vw;
+}
+.swiper-item {
+  width: 100%;
+  height: 100%;
+}
+.swiper-item-1 {
+  background-color: #1AAD19;
+}
+.swiper-item-2 {
+  background-color: #2782D7;
+}
+.swiper-item-3 {
+  background-color: #F1F1F1;
+}
+
+.card-container {
+  position: relative;
+  top: -50rpx;
+  width: 100%;
+  padding: 5rpx 35rpx 0 35rpx;
+}
+.card-container .head, .card-container .content {
+  background-color: #fff;
+}
+.card-container .head {
+  width: 100%;
+  margin-bottom: 5rpx;
+  padding: 10rpx 0;
+  box-shadow: 0 0 10rpx 0 #aaa;
+}
+.head view {
+  text-align: center;
+  line-height: 70rpx;
+}
+.head .title {
+  font-size: 35rpx; color: #333;
+}
+.head .price {
+  font-size: 30rpx; color: #b0424a;
+}
+.content .msg {
+  display: flex;
+  justify-content: space-around;
+  font-size: 25rpx; color: #aaa; 
+}
+.content .msg text{
+  line-height: 100rpx;
+}
+.content .tip-pannel {
+  display: flex;
+  justify-content: space-between;
+  font-size: 30rpx; color: #666;
+}
+
+
+.foot-bar {
+  position: absolute;
+  bottom: 0;
+  width: 100%; height: 200rpx;
+  background: #aaa;
+}
