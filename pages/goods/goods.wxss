@@ -3,15 +3,14 @@ image {
   background-color: rgba(177, 66, 74, 0.071);
 }
 .root {
-  width: 100%; height: 100vh;
-  position: relative;
+  width: 100%;
+  background-color: #f8f8f8;
 }
 .banner-container swiper{
   width: 100%; height: 80vw;
 }
 .swiper-item {
-  width: 100%;
-  height: 100%;
+  width: 100%; height: 100%;
 }
 .swiper-item-1 {
   background-color: #1AAD19;
@@ -25,18 +24,21 @@ image {
 
 .card-container {
   position: relative;
-  top: -50rpx;
+  top: -70rpx;
   width: 100%;
-  padding: 5rpx 35rpx 0 35rpx;
+  padding: 25rpx 50rpx;
 }
 .card-container .head, .card-container .content {
   background-color: #fff;
 }
+.card-container .head-pannel {
+  padding-bottom: 20rpx;
+  background-color: #fff;
+}
 .card-container .head {
   width: 100%;
-  margin-bottom: 5rpx;
-  padding: 10rpx 0;
-  box-shadow: 0 0 10rpx 0 #aaa;
+  padding: 10rpx;
+  box-shadow: 0 0 25rpx 0 #aaa;
 }
 .head view {
   text-align: center;
@@ -48,24 +50,64 @@ image {
 .head .price {
   font-size: 30rpx; color: #b0424a;
 }
+.content {
+  padding-bottom: 20rpx;
+}
 .content .msg {
   display: flex;
   justify-content: space-around;
-  font-size: 25rpx; color: #aaa; 
+  font-size: 25rpx; color: #999; 
 }
 .content .msg text{
-  line-height: 100rpx;
+  line-height: 80rpx;
+  padding: 20rpx 20rpx;
 }
 .content .tip-pannel {
   display: flex;
   justify-content: space-between;
   font-size: 30rpx; color: #666;
+  padding: 20rpx 40rpx 50rpx 40rpx;
+}
+.tip-item icon, .tip-item text{
+  vertical-align: middle;
+}
+.content .opt {
+  padding: 0 40rpx;
+}
+.opt .size-btn, .opt .comment-btn {
+  background-color: #f2f2f2;
+  font-size: 25rpx; color: #999;
+  line-height: 80rpx;
+  margin-bottom: 20rpx;
+  text-align: left;
+  padding: 0 20rpx;
 }
 
+.details-container {
+  min-height: 500rpx;
+  background-color: #999;
+  padding-bottom: 150rpx;
+}
 
 .foot-bar {
-  position: absolute;
+  position: fixed;
   bottom: 0;
-  width: 100%; height: 200rpx;
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
   background: #aaa;
+}
+.cart, .like, .addtocart, .order {
+  font-size: 28rpx; color: #eee;
+  text-align: center; line-height: 100rpx;
+}
+.cart, .like {
+  flex-grow: 2;
+}
+.addtocart, .order {
+  flex-grow: 2;
+  background-color: #b0424a;
+}
+.addtocart {
+  background-color: #a8545a;
 }

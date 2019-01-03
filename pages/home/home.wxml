@@ -29,7 +29,7 @@
       </view>
     </scroll-view>
     <view class="coupon-row">
-      <view class="coupon-left">
+      <view class="coupon-left" bindtap='navToDetail'>
         <view class="card">
           <text class="tip">满包邮</text>
           <text class="title">断码清仓</text>

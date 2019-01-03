@@ -37,5 +37,10 @@ Page({
       { src: 'http://xxx' },
       { src: 'http://xxx' },
     ]
+  },
+  navToDetail(event) {
+    wx.navigateTo({
+      url: '/pages/goods/goods?data=cnm'
+    })
   }
 })

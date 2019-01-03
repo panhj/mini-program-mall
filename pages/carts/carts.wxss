@@ -1,0 +1,110 @@
+/* pages/carts/carts.wxss */
+page {
+  background-color: #eee
+}
+.carts-container {
+  width: 100%;
+  min-height: 600rpx;
+  padding-bottom: 120rpx;
+}
+.card {
+  display: flex;
+  justify-content: space-between;
+  width: 100%; height: 240rpx;
+  margin-bottom: 15rpx;
+  background-color: #fff;
+}
+.select {
+  position: relative;
+  width: 100rpx;
+  height: 100%;
+}
+.select .dot {
+  position: absolute;
+  top: 95rpx; left: 18rpx;
+  width: 50rpx; height: 50rpx;
+}
+.pic{
+  width: 240rpx; height: 240rpx;
+  padding: 20rpx;
+}
+.pic image {
+  width: 200rpx; height: 200rpx;
+  background-color: #eee;
+}
+.msg-pannel {
+  flex-grow: 0;
+  padding: 20rpx 30rpx 20rpx 10rpx;
+}
+.msg-pannel .title {
+  font-size: 30rpx; color: #666;
+  height: 85rpx;
+}
+.msg-pannel .msg-line {
+  display: flex;
+  justify-content: space-between;
+  position: relative;
+  line-height: 57rpx;
+}
+.msg-line .size {
+  font-size: 26rpx; color: #aaa;
+}
+.msg-line .price {
+  font-size: 30rpx; color: #b0424a;
+}
+.opt-line {
+  width: 100%; height: 60rpx;
+  position: relative;
+}
+.btn-reduce, .btn-add, .btn-delete, .input-num {
+  position: absolute; top: 0;
+  height: 100%; line-height: 60rpx;
+  text-align: center;
+}
+.btn-reduce {
+  left: 0;
+  width: 60rpx;
+  background-color: #fafafa
+}
+.input-num {
+  left: 60rpx;
+  width: 120rpx;
+  font-size: 30rpx;
+  background-color: #eee;
+}
+.btn-add {
+  left: 180rpx;
+  width: 60rpx;
+  background-color: #fafafa
+}
+.btn-delete {
+  right: 0;
+  width: 60rpx;
+}
+
+.foot-container {
+  position: fixed;
+  bottom: 0;
+  display: flex;
+  justify-content: space-between;
+  width: 100%; height: 100rpx;
+  background-color: #fff;
+}
+.foot-container .select, .total, .calc-btn{
+  height: 100%; line-height: 100rpx;
+  font-size: 30rpx;
+}
+.foot-container .select .dot{
+  top: 25rpx;
+}
+.total {
+  flex-grow: 1;
+  text-align: left;
+  color: #666;
+  padding: 0 20rpx;
+}
+.calc-btn {
+  width: 200rpx;
+  background-color: #b0424a;
+  font-size: 30rpx; color: #fff; text-align: center;
+}

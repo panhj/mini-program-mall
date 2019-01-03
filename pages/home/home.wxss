@@ -392,13 +392,13 @@ image {
   border-left: 1rpx solid #ccc;
 }
 .tab-item {
-  line-height: 40rpx;
+  line-height: 50rpx;
   text-align: center;
   flex-grow: 1;
   border: 1rpx solid #ccc;
   border-left: none;
   color: #ccc;
-  font-size: 22rpx;
+  font-size: 28rpx;
 }
 .tab-active {
   background-color: #b0424a;

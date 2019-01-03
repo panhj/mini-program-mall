@@ -1,0 +1,52 @@
+<!--pages/carts/carts.wxml-->
+<view class="carts-container">
+  <view class="card">
+    <view class="select">
+      <view class="dot"><icon type="success" color="#b0424a" size="50rpx"></icon></view>
+    </view>
+    <view class="pic">
+      <image></image>
+    </view>
+    <view class="msg-pannel">
+      <view class="title"><text>全新正品AMD锐龙Ryzen R3 2200G 4核4线程处理器</text></view>
+      <view class="msg-line">
+        <text class="size">尺码:34</text>
+        <text class="price">¥398.00</text>
+      </view>
+      <view class="opt-line">
+        <view class="btn-reduce"> - </view>
+        <view class="input-num">2</view>
+        <view class="btn-add"> + </view>
+        <view class="btn-delete"><icon></icon></view>
+      </view>
+    </view>
+  </view>
+  <view class="card">
+    <view class="select">
+      <view class="dot"><icon type="success" color="#b0424a" size="50rpx"></icon></view>
+    </view>
+    <view class="pic">
+      <image></image>
+    </view>
+    <view class="msg-pannel">
+      <view class="title"><text>全新正品AMD锐龙Ryzen R3 2200G 4核4线程处理器</text></view>
+      <view class="msg-line">
+        <text class="size">尺码:34</text>
+        <text class="price">¥398.00</text>
+      </view>
+      <view class="opt-line">
+        <view class="btn-reduce"> - </view>
+        <view class="input-num">2</view>
+        <view class="btn-add"> + </view>
+        <view class="btn-delete"><icon></icon></view>
+      </view>
+    </view>
+  </view>
+</view>
+<view class="foot-container">
+  <view class="select">
+    <view class="dot"><icon type="success" color="#b0424a" size="50rpx"></icon></view>
+  </view>
+  <view class="total"><text>总计：¥398.00</text></view>
+  <view class="calc-btn">结算</view>
+</view>
