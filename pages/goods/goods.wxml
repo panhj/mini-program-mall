@@ -37,17 +37,17 @@
         </view>
       </view>
       <view class="opt">
-        <view class="size-btn"><text>选择尺码规格</text><icon></icon></view>
-        <view class="comment-btn"><text>查看评论</text></view>
+        <view class="size-btn"><text>选择尺码规格</text><text class="iconfont icon-arrow"></text></view>
+        <view class="comment-btn"><text>查看评论</text><text class="iconfont icon-arrow"></text></view>
       </view>
     </view>
   </view>
-  <view class="details-container">
-
+  <view class="details-container" style="text-align:center;padding-top:40rpx;">
+    <text style='color: #eee'>商品详情</text>
   </view>
   <view class="foot-bar">
-    <view class="cart"><icon></icon></view>
-    <view class="like"><icon></icon></view>
+    <view class="cart"><text class="iconfont icon-cart"></text></view>
+    <view class="like"><text class="iconfont icon-like"></text></view>
     <view class="addtocart"><text>加入购物车</text></view>
     <view class="order"><text>立即下单</text></view>
   </view>

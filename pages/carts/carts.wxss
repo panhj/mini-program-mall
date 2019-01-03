@@ -95,7 +95,7 @@ page {
   font-size: 30rpx;
 }
 .foot-container .select .dot{
-  top: 25rpx;
+  top: 12rpx;
 }
 .total {
   flex-grow: 1;

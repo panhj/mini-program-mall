@@ -12,3 +12,31 @@ view {
   height: 0;
   color: transparent;
 }
+
+@font-face {
+  font-family: 'iconfont';  /* project id 997764 */
+  src: url('//at.alicdn.com/t/font_997764_g3zsz3d8kfo.eot');
+  src: url('//at.alicdn.com/t/font_997764_g3zsz3d8kfo.eot?#iefix') format('embedded-opentype'),
+  url('//at.alicdn.com/t/font_997764_g3zsz3d8kfo.woff2') format('woff2'),
+  url('//at.alicdn.com/t/font_997764_g3zsz3d8kfo.woff') format('woff'),
+  url('//at.alicdn.com/t/font_997764_g3zsz3d8kfo.ttf') format('truetype'),
+  url('//at.alicdn.com/t/font_997764_g3zsz3d8kfo.svg#iconfont') format('svg');
+}
+.iconfont {
+  font-family: "iconfont" !important;
+  font-size: 52rpx;
+  font-style: normal;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+.icon-backfill:before { content: "\e799"}
+.icon-delete:before{content: "\e6b4"}
+.icon-deletefill:before {content: "\e6a6"}
+.icon-like:before {content: "\e669"}
+.icon-likefill:before {content: "\e668"}
+.icon-favor:before {content: "\e64c"}
+.icon-favorfill:before {content: "\e64b"}
+.icon-backtop:before {content: "\e6a0"}
+.icon-cart:before {content: "\e6af"}
+.icon-cartfill:before {content: "\e6b9"}
+.icon-arrow:before {content: "\e6a3"}
