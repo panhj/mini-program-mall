@@ -53,33 +53,34 @@ page {
   font-size: 30rpx; color: #b0424a;
 }
 .opt-line {
-  width: 100%; height: 60rpx;
+  width: 100%; height: 50rpx;
   position: relative;
+  top: 10rpx;
 }
 .btn-reduce, .btn-add, .btn-delete, .input-num {
   position: absolute; top: 0;
-  height: 100%; line-height: 60rpx;
+  height: 100%; line-height: 50rpx;
   text-align: center;
 }
 .btn-reduce {
   left: 0;
-  width: 60rpx;
+  width: 50rpx;
   background-color: #fafafa
 }
 .input-num {
-  left: 60rpx;
+  left: 50rpx;
   width: 120rpx;
   font-size: 30rpx;
   background-color: #eee;
 }
 .btn-add {
-  left: 180rpx;
-  width: 60rpx;
+  left: 170rpx;
+  width: 50rpx;
   background-color: #fafafa
 }
 .btn-delete {
   right: 0;
-  width: 60rpx;
+  width: 50rpx;
 }
 
 .foot-container {

@@ -70,7 +70,8 @@ page {
 }
 .item-pannel {
   width: 350rpx;
-  padding: 20rpx; margin-bottom: 10rpx;
+  padding: 20rpx; margin-bottom: 15rpx;
+  border-radius: 15rpx;
   background-color: #fff;
 }
 .item-pannel .img, .item-pannel .img image {

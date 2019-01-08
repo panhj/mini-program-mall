@@ -88,10 +88,9 @@ Page({
    * 滚动监听
    */
   onPageScroll: function (e) {
-    if (e.scrollTop > 105) return false;
+    if (e.scrollTop > 300) return false;
     this.setData({
-      bgopacity: e.scrollTop*0.01
+      bgopacity: (e.scrollTop*0.005).toFixed(2)
     });
-    console.log(this.data.bgopacity)
   }
 })
