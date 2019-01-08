@@ -2,7 +2,7 @@
 <view class="carts-container">
   <view class="card">
     <view class="select">
-      <view class="dot"><icon type="success" color="#b0424a" size="50rpx"></icon></view>
+      <view class="dot"><icon type="success" color="#b0424a" size="40rpx"></icon></view>
     </view>
     <view class="pic">
       <image></image>
@@ -23,7 +23,7 @@
   </view>
   <view class="card">
     <view class="select">
-      <view class="dot"><icon type="success" color="#b0424a" size="50rpx"></icon></view>
+      <view class="dot"><icon type="success" color="#b0424a" size="40rpx"></icon></view>
     </view>
     <view class="pic">
       <image></image>
@@ -45,7 +45,7 @@
 </view>
 <view class="foot-container">
   <view class="select">
-    <view class="dot"><icon type="success" color="#b0424a" size="50rpx"></icon></view>
+    <view class="dot"><icon type="success" color="#b0424a" size="40rpx"></icon></view>
   </view>
   <view class="total"><text>总计：¥398.00</text></view>
   <view class="calc-btn">结算</view>

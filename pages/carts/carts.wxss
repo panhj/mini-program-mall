@@ -21,7 +21,7 @@ page {
 }
 .select .dot {
   position: absolute;
-  top: 95rpx; left: 18rpx;
+  top: 100rpx; left: 22rpx;
   width: 50rpx; height: 50rpx;
 }
 .pic{
@@ -95,7 +95,7 @@ page {
   font-size: 30rpx;
 }
 .foot-container .select .dot{
-  top: 12rpx;
+  top: 9rpx;
 }
 .total {
   flex-grow: 1;
