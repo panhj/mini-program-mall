@@ -1,0 +1,23 @@
+<!--pages/list/list.wxml-->
+<view class="search-container">
+  <view class="input-pannel">
+    <input type="text" placeholder="列表..." maxlength="10" confirm-type="search"></input>
+    <text class="iconfont"></text>
+  </view>
+  <view class="filter-pannel">
+    <view class="filter-item"><text>新品</text></view>
+    <view class="filter-item"><text>销量</text></view>
+    <view class="filter-item"><text>价格</text></view>
+    <view class="filter-item"><text>促销</text></view>
+  </view>
+</view>
+<view class="content-container">
+  <view class="item-pannel" wx:for="{{goods}}" wx:key="unique">
+    <view class="img"><image></image></view>
+    <view class="title"><text>{{item.name}}</text></view>
+    <view class="bot">
+      <text class="price">¥ {{item.price}}</text>
+      <text class="num">月售：{{item.num}}</text>
+    </view>
+  </view>
+</view>
