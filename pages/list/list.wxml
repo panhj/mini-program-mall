@@ -1,7 +1,7 @@
 <!--pages/list/list.wxml-->
 <view class="search-container">
   <view class="input-pannel">
-    <input type="text" placeholder="列表..." maxlength="10" confirm-type="search"></input>
+    <input type="text" placeholder="列表..." maxlength="15" confirm-type="search"></input>
     <text class="iconfont"></text>
   </view>
   <view class="filter-pannel">

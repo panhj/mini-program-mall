@@ -29,14 +29,14 @@
       </view>
     </scroll-view>
     <view class="coupon-row">
-      <view class="coupon-left" bindtap='navToDetail'>
-        <view class="card">
+      <view class="coupon-left">
+        <view class="card" bindtap='navToDetail'>
           <text class="tip">满包邮</text>
           <text class="title">断码清仓</text>
           <text class="abc">NEW ARRIVAL</text>
           <image src=""></image>
         </view>
-        <view class="card">
+        <view class="card" bindtap='navToList'>
           <text class="tip">满包邮</text>
           <text class="title">断码清仓</text>
           <text class="abc">NEW ARRIVAL</text>

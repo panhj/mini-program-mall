@@ -5,7 +5,16 @@ Page({
    * 页面的初始数据
    */
   data: {
-
+    goods: [
+      { name: '刺刀绣花设计Mbbcar原创设计中国风元素绣x as ds saas花保暖', price: 849.00, num: 124 },
+      { name: '刺刀绣花设计Mbbcar原创设计中国风元素绣花保暖', price: 849.00, num: 124 },
+      { name: '刺刀绣花设计Mbbcar原创设计中国风元素绣花保暖', price: 849.00, num: 124 },
+      { name: '刺刀绣花设计Mbbcar原创设计中国风元素绣花保暖', price: 849.00, num: 124 },
+      { name: '刺刀绣花设计Mbbcar原创设计中国风元素绣花保暖', price: 849.00, num: 124 },
+      { name: '刺刀绣花设计Mbbcar原创设计中国风元素绣花保暖', price: 849.00, num: 124 },
+      { name: '刺刀绣花设计Mbbcar原创设计中国风元素绣花保暖', price: 849.00, num: 124 },
+      { name: '刺刀绣花设计Mbbcar原创设计中国风元素绣花保暖', price: 849.00, num: 124 },
+    ]
   },
 
   /**

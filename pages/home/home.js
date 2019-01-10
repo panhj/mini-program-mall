@@ -42,5 +42,10 @@ Page({
     wx.navigateTo({
       url: '/pages/goods/goods?data=cnm'
     })
+  },
+  navToList(event) {
+    wx.navigateTo({
+      url: '/pages/list/list?data=cnm'
+    })
   }
 })

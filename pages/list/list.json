@@ -1,5 +1,7 @@
 {
   "usingComponents": {},
-  "navigationStyle": "custom",
-  "navigationBarTextStyle": "white"
+  "backgroundTextStyle": "light",
+  "navigationBarBackgroundColor": "#b0424a",
+  "navigationBarTitleText": "断码清仓",
+  "navigationBarTextStyle": "light"
 }

@@ -79,7 +79,7 @@ page {
   background-color: rgba(177, 66, 74, 0.071);
 }
 .item-pannel .title {
-  font-size: 24rpx; line-height: 35rpx; color: #333;
+  font-size: 26rpx; line-height: 35rpx; color: #333;
   padding-top: 10rpx;
   text-align: left;
   max-height: 80rpx;
