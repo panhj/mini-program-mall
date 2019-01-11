@@ -19,17 +19,17 @@
   <view class="content"><text>我的订单</text></view>
   <view class="icon-right"><text class="iconfont"></text></view>
 </view>
-<view class="list-item">
+<navigator url="/pages/user/coupon/coupon" class="list-item">
   <view class="icon-left"><text class="iconfont"></text></view>
   <view class="content"><text>我的优惠券</text></view>
   <view class="icon-right"><text class="iconfont"></text></view>
-</view>
+</navigator>
 <view class="blank-35"></view>
-<view class="list-item list-border-b">
+<navigator class="list-item list-border-b">
   <view class="icon-left"><text class="iconfont"></text></view>
   <view class="content"><text>常见问题</text></view>
   <view class="icon-right"><text class="iconfont"></text></view>
-</view>
+</navigator>
 <view class="list-item list-border-b">
   <view class="icon-left"><text class="iconfont"></text></view>
   <view class="content"><text>关于我们</text></view>

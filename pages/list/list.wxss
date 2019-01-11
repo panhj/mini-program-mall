@@ -9,14 +9,14 @@ page {
   background-color: #b0424a;
 }
 .input-pannel {
-  margin: 10rpx 30rpx 30rpx 30rpx;
-  height: 65rpx;
+  margin: 10rpx 30rpx 20rpx 30rpx;
+  height: 60rpx;
   border-radius: 10rpx;
   overflow: hidden;
 }
 .input-pannel input {
   background-color: #fff;
-  width: 100%; height: 65rpx;
+  width: 100%; height: 60rpx;
   font-size: 28rpx;
   box-sizing: border-box;
   padding: 5rpx 20rpx;

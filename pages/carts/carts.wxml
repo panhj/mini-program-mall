@@ -36,7 +36,7 @@
       </view>
       <view class="opt-line">
         <view class="btn-reduce"> - </view>
-        <view class="input-num">2</view>
+        <view class="input-num">1234</view>
         <view class="btn-add"> + </view>
         <view class="btn-delete"><icon></icon></view>
       </view>

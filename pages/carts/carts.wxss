@@ -59,7 +59,7 @@ page {
 }
 .btn-reduce, .btn-add, .btn-delete, .input-num {
   position: absolute; top: 0;
-  height: 100%; line-height: 50rpx;
+  height: 100%; line-height: 48rpx;
   text-align: center;
 }
 .btn-reduce {
@@ -69,12 +69,12 @@ page {
 }
 .input-num {
   left: 50rpx;
-  width: 120rpx;
+  width: 100rpx;
   font-size: 30rpx;
   background-color: #eee;
 }
 .btn-add {
-  left: 170rpx;
+  left: 150rpx;
   width: 50rpx;
   background-color: #fafafa
 }
