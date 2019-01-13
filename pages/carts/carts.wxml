@@ -1,6 +1,6 @@
 <!--pages/carts/carts.wxml-->
 <view class="carts-container">
-  <view class="card">
+  <view class="card" wx:for="{{goods}}" wx:key="unique">
     <view class="select">
       <view class="dot"><icon type="success" color="#b0424a" size="40rpx"></icon></view>
     </view>
@@ -8,37 +8,16 @@
       <image></image>
     </view>
     <view class="msg-pannel">
-      <view class="title"><text>全新正品AMD锐龙Ryzen R3 2200G 4核4线程处理器</text></view>
+      <view class="title"><text>{{item.name}}</text></view>
       <view class="msg-line">
-        <text class="size">尺码:34</text>
-        <text class="price">¥398.00</text>
+        <text class="size">{{item.size}}</text>
+        <text class="price">¥{{item.price}}.00</text>
       </view>
       <view class="opt-line">
         <view class="btn-reduce"> - </view>
-        <view class="input-num">2</view>
+        <view class="input-num">{{item.num}}</view>
         <view class="btn-add"> + </view>
-        <view class="btn-delete"><icon></icon></view>
-      </view>
-    </view>
-  </view>
-  <view class="card">
-    <view class="select">
-      <view class="dot"><icon type="success" color="#b0424a" size="40rpx"></icon></view>
-    </view>
-    <view class="pic">
-      <image></image>
-    </view>
-    <view class="msg-pannel">
-      <view class="title"><text>全新正品AMD锐龙Ryzen R3 2200G 4核4线程处理器</text></view>
-      <view class="msg-line">
-        <text class="size">尺码:34</text>
-        <text class="price">¥398.00</text>
-      </view>
-      <view class="opt-line">
-        <view class="btn-reduce"> - </view>
-        <view class="input-num">1234</view>
-        <view class="btn-add"> + </view>
-        <view class="btn-delete"><icon></icon></view>
+        <view class="btn-delete"><text class="iconfont icon-delete"></text></view>
       </view>
     </view>
   </view>

@@ -15,28 +15,28 @@
 </view>
 <view class="blank-35"></view>
 <view class="list-item list-border-b">
-  <view class="icon-left"><text class="iconfont"></text></view>
+  <view class="icon-left"><text style="color: #D66000" class="iconfont icon-order"></text></view>
   <view class="content"><text>我的订单</text></view>
   <view class="icon-right"><text class="iconfont"></text></view>
 </view>
 <navigator url="/pages/user/coupon/coupon" class="list-item">
-  <view class="icon-left"><text class="iconfont"></text></view>
+  <view class="icon-left"><text style="color: #b0424a" class="iconfont icon-coupon"></text></view>
   <view class="content"><text>我的优惠券</text></view>
   <view class="icon-right"><text class="iconfont"></text></view>
 </navigator>
 <view class="blank-35"></view>
 <navigator class="list-item list-border-b">
-  <view class="icon-left"><text class="iconfont"></text></view>
+  <view class="icon-left"><text style="color: #00ABD6" class="iconfont icon-ask"></text></view>
   <view class="content"><text>常见问题</text></view>
   <view class="icon-right"><text class="iconfont"></text></view>
 </navigator>
 <view class="list-item list-border-b">
-  <view class="icon-left"><text class="iconfont"></text></view>
+  <view class="icon-left"><text style="color: #FF837D" class="iconfont icon-express"></text></view>
   <view class="content"><text>关于我们</text></view>
   <view class="icon-right"><text class="iconfont"></text></view>
 </view>
 <view class="list-item">
-  <view class="icon-left"><text class="iconfont"></text></view>
+  <view class="icon-left"><text style="color: #008F75" class="iconfont icon-car"></text></view>
   <view class="content"><text>我的收货地址</text></view>
   <view class="icon-right"><text class="iconfont"></text></view>
 </view>

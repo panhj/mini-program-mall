@@ -3,19 +3,13 @@
   <view class="search-container">
     <view class="search-bar">
       <input type="text" placeholder="更多惊喜等你发现..." maxlength="15" confirm-type="search"></input>
-      <image></image>
+      <view class="search-icon"><icon type="search" size="30rpx" color="#b0424a"></icon></view>
     </view>
   </view>
   <view class="banner-container">
-    <swiper indicator-dots="true" autoplay="true" interval="6000" duration="500" circular="true" indicator-active-color="#fff">
-      <swiper-item>
-        <view class="swiper-item swiper-item-1"></view>
-      </swiper-item>
-      <swiper-item>
-        <view class="swiper-item swiper-item-2"></view>
-      </swiper-item>
-      <swiper-item>
-        <view class="swiper-item swiper-item-3"></view>
+    <swiper indicator-dots="true" autoplay="true" interval="5000" duration="400" circular="true" indicator-active-color="#fff">
+      <swiper-item wx:for="{{banners}}" wx:key='unique'>
+        <view class="swiper-item"><image bindtap="tapBanner" data-id="{{item.businessId}}" src="{{item.picUrl}}"></image></view>
       </swiper-item>
     </swiper>
   </view>

@@ -9,6 +9,7 @@ page {
   background-color: #b0424a;
 }
 .input-pannel {
+  position: relative;
   margin: 10rpx 30rpx 20rpx 30rpx;
   height: 60rpx;
   border-radius: 10rpx;
@@ -20,6 +21,10 @@ page {
   font-size: 28rpx;
   box-sizing: border-box;
   padding: 5rpx 20rpx;
+}
+.input-pannel .search-icon {
+  width: 50rpx; height: 50rpx;
+  position: absolute; top: 12rpx; right: 10rpx;
 }
 .filter-pannel {
   display: flex;
@@ -35,7 +40,7 @@ page {
 }
 
 .content-container {
-  margin-top: 225rpx;
+  margin-top: 150rpx;
   display: flex;
   justify-content: space-between;
   flex-wrap: wrap;

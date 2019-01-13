@@ -1,7 +1,8 @@
 {
   "usingComponents": {},
-  "backgroundTextStyle": "light",
+  "backgroundTextStyle": "dark",
   "navigationBarBackgroundColor": "#b0424a",
   "navigationBarTitleText": "潘华剑的商城",
-  "navigationBarTextStyle": "light"
+  "navigationBarTextStyle": "light",
+  "enablePullDownRefresh": true
 }

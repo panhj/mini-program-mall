@@ -34,7 +34,7 @@ page {
 }
 .card .image-text .num {
   font-size: 70rpx; color: #fff; text-align: center;
-  padding-top: 35rpx;
+  padding-top: 35rpx; padding-right: 10rpx;
 }
 .card .image-text .usenow {
   font-size: 26rpx; color: #fff;

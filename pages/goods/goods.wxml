@@ -2,28 +2,22 @@
 <view class="root">
    <view class="banner-container">
     <swiper indicator-dots="false" duration="300" circular="true">
-      <swiper-item>
-        <view class="swiper-item swiper-item-1"></view>
-      </swiper-item>
-      <swiper-item>
-        <view class="swiper-item swiper-item-2"></view>
-      </swiper-item>
-      <swiper-item>
-        <view class="swiper-item swiper-item-3"></view>
+      <swiper-item wx:for="{{pics}}" wx:key="unique">
+        <view class="swiper-item"><image src="{{item.pic}}"></image></view>
       </swiper-item>
     </swiper>
   </view>
   <view class="card-container">
     <view class="head-pannel">
       <view class="head">
-        <view class="title"><text>捷安特ocr5500公路车禧玛诺18速入门</text></view>
-        <view class="price"><text>¥9899/件</text></view>
+        <view class="title"><text>{{good.name}}</text></view>
+        <view class="price"><text>¥{{good.minPrice}}/件</text></view>
       </view>
     </view>
     <view class="content">
       <view class="msg">
-        <text>原价¥9999</text>
-        <text>库存1234件</text>
+        <text>原价¥{{good.originalPrice}}</text>
+        <text>库存{{good.stores}}件</text>
       </view>
       <view class="tip-pannel">
         <view class="tip-item">
@@ -37,18 +31,22 @@
         </view>
       </view>
       <view class="opt">
-        <view class="size-btn"><text>选择尺码规格</text><text class="iconfont icon-arrow"></text></view>
+        <view class="size-btn">
+          <picker bindchange="bindPickerChange" value="{{index}}" range="{{sizes}}">
+            <text>{{currentSize}}</text><text class="iconfont icon-arrow"></text>
+          </picker>
+        </view>
         <view class="comment-btn"><text>查看评论</text><text class="iconfont icon-arrow"></text></view>
       </view>
     </view>
   </view>
-  <view class="details-container" style="text-align:center;padding-top:40rpx;">
-    <text style='color: #eee'>商品详情</text>
+  <view class="details-container" style="text-align:center;">
+    <image mode="widthFix" src="{{detailPic.pic}}"></image>
   </view>
   <view class="foot-bar">
-    <view class="cart"><text class="iconfont icon-cart"></text></view>
-    <view class="like"><text class="iconfont icon-like"></text></view>
-    <view class="addtocart"><text>加入购物车</text></view>
+    <view class="cart" bindtap='bindSwitchTocart'><text class="iconfont icon-cart"></text></view>
+    <view class="like" bindtap="bindAddmyLike"><text class="iconfont {{islike ? 'icon-likefill' : 'icon-like'}}"></text></view>
+    <view class="addtocart" bindtap="bindAddcart"><text>加入购物车</text></view>
     <view class="order"><text>立即下单</text></view>
   </view>
 </view>

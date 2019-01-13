@@ -67,6 +67,7 @@ page {
   flex-wrap: wrap;
   width: 100%;
   padding: 20rpx;
+  padding-top:10rpx;
 }
 .item-pannel {
   width: 350rpx;

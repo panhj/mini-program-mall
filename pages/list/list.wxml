@@ -2,7 +2,7 @@
 <view class="search-container">
   <view class="input-pannel">
     <input type="text" placeholder="列表..." maxlength="15" confirm-type="search"></input>
-    <text class="iconfont"></text>
+    <view class="search-icon"><icon type="search" size="30rpx" color="#b0424a"></icon></view>
   </view>
   <view class="filter-pannel">
     <view class="filter-item"><text>新品</text></view>

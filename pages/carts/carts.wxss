@@ -82,6 +82,9 @@ page {
   right: 0;
   width: 50rpx;
 }
+.btn-delete .icon-delete {
+  font-size: 36rpx; color: #b0424a;
+}
 
 .foot-container {
   position: fixed;
