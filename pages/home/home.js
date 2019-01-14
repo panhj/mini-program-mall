@@ -1,3 +1,4 @@
+const app = getApp();
 Page({
   data: {
     banners: [
@@ -58,9 +59,59 @@ Page({
         console.log(that.data.banners)
       }
     })
+    wx.request({
+      url: 'https://api.it120.cc/panhjserve/discounts/coupons',
+      data: {
+        
+      },
+      header: {
+        'content-type': 'application/json' // 默认值
+      },
+      success(res) {
+        let couponList = [];
+        res.data.data.map(function (value, index) {
+          couponList.push({
+            num: value.moneyMax,
+            sum: value.moneyHreshold,
+            id: value.id
+          })
+        })
+        that.setData({
+          coupons: couponList
+        })
+        console.log(that.data.coupons)
+      }
+    })
   },
-  onPullDownRefresh() {
+  onPullDownRefresh () {
     wx.stopPullDownRefresh()
+  },
+  addCoupon (e) {
+    wx.request({
+      url: 'https://api.it120.cc/panhjserve/discounts/fetch',
+      data: {
+        id: e.currentTarget.dataset.coupon.id,
+        token: wx.getStorageSync('token')
+      },
+      header: {
+        'content-type': 'application/json' // 默认值
+      },
+      success(res) {
+        if(res.data.code == 0) {
+          wx.showToast({
+            title: '领取成功',
+            icon: 'success',
+            duration: 1000
+          });
+        } else if(res.data.code == 20003) {
+          wx.showModal({
+            title: '提示',
+            content: '不能重复领取',
+            showCancel: false
+          })
+        }
+      }
+    })
   },
   tapBanner(event) {
     wx.navigateTo({

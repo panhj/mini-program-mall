@@ -1,12 +1,13 @@
 // pages/carts/carts.js
 const app = getApp();
 Page({
-
   /**
    * 页面的初始数据
    */
   data: {
-    goods: []
+    goods: [],
+    selectedAll: true,
+    total: 0,
   },
   bindReduce (e) {
     let index = e.currentTarget.dataset.index;
@@ -16,6 +17,7 @@ Page({
     this.setData({
       goods: newGoods
     })
+    this.calcTotal();
   },
   bindAdd (e) {
     let index = e.currentTarget.dataset.index;
@@ -25,6 +27,7 @@ Page({
     this.setData({
       goods: newGoods
     })
+    this.calcTotal();
   },
   bindDelete (e) {
     let index = e.currentTarget.dataset.index;
@@ -34,10 +37,11 @@ Page({
       content: '确定要删除该商品？',
       showCancel: true,//是否显示取消按钮
       cancelText: "否",//默认是“取消”
-      cancelColor: 'skyblue',//取消文字的颜色
+      cancelColor: '#999',//取消文字的颜色
       confirmText: "是",//默认是“确定”
       confirmColor: '#b0424a',//确定文字的颜色
       success: function (res) {
+        if (res.cancel) return false;
         let newGoods = that.data.goods;
         newGoods.splice(index, 1);
         that.setData({
@@ -45,22 +49,57 @@ Page({
         })
         app.carts = newGoods;
       },
-      fail: function (res) { },//接口调用失败的回调函数
+      fail: function (res) {
+        return console.log('cancel')
+      },//接口调用失败的回调函数
       complete: function (res) { },//接口调用结束的回调函数（调用成功、失败都会执行）
     })
   },
   bindSingleSelect (e) {
     let index = e.currentTarget.dataset.index;
-    
+    let flag = this.data.goods[index].selected;
+    let item = 'goods[' + index + '].selected';
+    this.setData({
+      [item]: !flag
+    })
+    this.setData({
+      selectedAll: this.checkIsSelectedAll(this.data.goods)
+    })
+    this.calcTotal();
   },
   bindAllSelect (e) {
-
+    let newGoods = this.data.goods;
+    let flag = this.data.selectedAll;
+    newGoods.map(function (value, index) {
+      value.selected = !flag;
+    })
+    this.setData({
+      goods: newGoods,
+      selectedAll: !flag
+    })
+    this.calcTotal();
+  },
+  checkIsSelectedAll (obj) {
+    let flag = true;
+    obj.map(function (value, index) {
+      if(!value.selected) flag = false;
+    })
+    return flag;
+  },
+  calcTotal () {
+    let sum = 0;
+    this.data.goods.map(function (value, index) {
+      if(value.selected) sum += (value.num * value.price);
+    })
+    this.setData({
+      total: sum
+    })
   },
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-   
+    
   },
 
   /**
@@ -77,7 +116,9 @@ Page({
     this.setData({
       goods: app.carts
     });
+    console.log('购物车列表')
     console.log(this.data.goods)
+    this.calcTotal();
   },
 
   /**

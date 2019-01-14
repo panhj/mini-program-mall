@@ -15,7 +15,7 @@
   </view>
   <view class="coupon-container">
     <scroll-view scroll-x="true" scroll-left="0">
-      <view class="scroll-item" wx:for="{{coupons}}" wx:key="unique">
+      <view class="scroll-item" wx:for="{{coupons}}" wx:key="unique" data-coupon="{{item}}" bindtap='addCoupon'>
         <text class="p-ab coupon-yuan">¥</text>
         <text class="p-ab coupon-num">{{item.num}}</text>
         <text class="p-ab coupon-title">优惠券</text>

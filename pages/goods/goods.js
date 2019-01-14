@@ -45,7 +45,9 @@ Page({
       name: this.data.good.name,
       price: this.data.good.minPrice,
       size: this.data.currentSize,
-      num: 1
+      num: 1,
+      picUrl: this.data.pics[0].pic,
+      selected: true
     })
     wx.showToast({
       title: '添加成功',
