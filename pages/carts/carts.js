@@ -1,13 +1,61 @@
 // pages/carts/carts.js
+const app = getApp();
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    goods: {}
+    goods: []
   },
+  bindReduce (e) {
+    let index = e.currentTarget.dataset.index;
+    let newGoods = this.data.goods;
+    if (newGoods[index].num == 0) return false;
+    newGoods[index].num--;
+    this.setData({
+      goods: newGoods
+    })
+  },
+  bindAdd (e) {
+    let index = e.currentTarget.dataset.index;
+    let newGoods = this.data.goods;
+    if (newGoods[index].num == 100) return false;
+    newGoods[index].num++;
+    this.setData({
+      goods: newGoods
+    })
+  },
+  bindDelete (e) {
+    let index = e.currentTarget.dataset.index;
+    let that = this;
+    wx.showModal({
+      title: '删除确认',
+      content: '确定要删除该商品？',
+      showCancel: true,//是否显示取消按钮
+      cancelText: "否",//默认是“取消”
+      cancelColor: 'skyblue',//取消文字的颜色
+      confirmText: "是",//默认是“确定”
+      confirmColor: '#b0424a',//确定文字的颜色
+      success: function (res) {
+        let newGoods = that.data.goods;
+        newGoods.splice(index, 1);
+        that.setData({
+          goods: newGoods
+        })
+        app.carts = newGoods;
+      },
+      fail: function (res) { },//接口调用失败的回调函数
+      complete: function (res) { },//接口调用结束的回调函数（调用成功、失败都会执行）
+    })
+  },
+  bindSingleSelect (e) {
+    let index = e.currentTarget.dataset.index;
+    
+  },
+  bindAllSelect (e) {
 
+  },
   /**
    * 生命周期函数--监听页面加载
    */
@@ -26,7 +74,6 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-    const app = getApp();
     this.setData({
       goods: app.carts
     });

@@ -1,6 +1,18 @@
 //app.js
 App({
-  carts: [],
+  carts: [{
+    id: 1,
+    name: 'xxxx',
+    price: 555,
+    size: 23,
+    num: 1
+  }, {
+      id: 2,
+      name: '撒大声地爱神的箭昂首的骄傲是假的撒',
+      price: 665,
+      size: 63,
+      num: 4
+    }],
   onLaunch: function () {
     // 展示本地存储能力
     var logs = wx.getStorageSync('logs') || []

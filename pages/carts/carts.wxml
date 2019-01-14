@@ -2,7 +2,7 @@
 <view class="carts-container">
   <view class="card" wx:for="{{goods}}" wx:key="unique">
     <view class="select">
-      <view class="dot"><icon type="success" color="#b0424a" size="40rpx"></icon></view>
+      <view class="dot" data-index="{{index}}" bindtap='bindSingleSelect'><icon type="success" color="{{item.selected ? '#b0424a':'#eee'}}" size="40rpx"></icon></view>
     </view>
     <view class="pic">
       <image></image>
@@ -14,18 +14,18 @@
         <text class="price">¥{{item.price}}.00</text>
       </view>
       <view class="opt-line">
-        <view class="btn-reduce"> - </view>
+        <view class="btn-reduce" data-index="{{index}}" bindtap='bindReduce'> - </view>
         <view class="input-num">{{item.num}}</view>
-        <view class="btn-add"> + </view>
-        <view class="btn-delete"><text class="iconfont icon-delete"></text></view>
+        <view class="btn-add" data-index="{{index}}" bindtap="bindAdd"> + </view>
+        <view class="btn-delete"><text class="iconfont icon-delete" data-index="{{index}}" bindtap="bindDelete"></text></view>
       </view>
     </view>
   </view>
 </view>
 <view class="foot-container">
   <view class="select">
-    <view class="dot"><icon type="success" color="#b0424a" size="40rpx"></icon></view>
+    <view class="dot" data-index="{{index}}" bindtap='bindAllSelect'><icon type="success" color="#b0424a" size="40rpx"></icon></view>
   </view>
-  <view class="total"><text>总计：¥398.00</text></view>
+  <view class="total"><text>总计：¥{{total}}.00</text></view>
   <view class="calc-btn">结算</view>
 </view>

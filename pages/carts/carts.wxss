@@ -33,7 +33,7 @@ page {
   background-color: #eee;
 }
 .msg-pannel {
-  flex-grow: 0;
+  width: 410rpx;
   padding: 20rpx 30rpx 20rpx 10rpx;
 }
 .msg-pannel .title {
