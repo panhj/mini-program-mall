@@ -1,24 +1,26 @@
 <!--pages/user/coupon/coupon.wxml-->
 <view class="tab-pannel">
-  <view class="tab-item">未使用(3)</view>
-  <view class="tab-item">已使用(0)</view>
-  <view class="tab-item">已过期(10)</view>
+  <view class="tab-item {{switch == 0 ? 'tab-active' : ''}}" bindtap='bindSwitch' data-type="0">未使用({{cn0}})</view>
+  <view class="tab-item {{switch == 1 ? 'tab-active' : ''}}" bindtap='bindSwitch' data-type="1">已使用({{cn1}})</view>
+  <view class="tab-item {{switch == 2 ? 'tab-active' : ''}}" bindtap='bindSwitch' data-type="2">已过期({{cn2}})</view>
 </view>
 <view class="content-container">
-  <view class="card">
-    <view class="image"><image src="/image/couponss.png"></image></view>
+  <view class="card" wx:for="{{coupons}}" wx:key="unique">
+    <view class="image" hidden="{{switch != 0}}"><image src="/image/couponss.png"></image></view>
+    <view class="image" hidden="{{switch == 0}}"><image src="/image/couponun.png"></image></view>
     <view class="image-text">
-      <view class="num"><text style="font-size:32rpx">¥</text><text>100</text></view>
+      <view class="num"><text style="font-size:32rpx">¥</text><text>{{item.money}}</text></view>
       <view class="usenow">立即使用 ></view>
     </view>
-    <view class="cannotuse" hidden="true"><view>已使用</view></view>
+    <view class="cannotuse" hidden="{{switch != 1}}"><view>已使用</view></view>
+    <view class="cannotuse" hidden="{{switch != 2}}"><view>已过期</view></view>
     <view class="text-pannel">
       <view class="title">优惠券</view>
       <view class="usespace">全品类通用</view>
-      <view class="date">有效期：2019.1.1 ~ 2019.1.11</view>
+      <view class="date">有效期：{{item.dateEnd}}</view>
     </view>
   </view>
-  <view class="card">
+  <!-- <view class="card">
     <view class="image"><image src="/image/couponun.png"></image></view>
     <view class="image-text">
       <view class="num"><text style="font-size:32rpx">¥</text><text>100</text></view>
@@ -30,5 +32,5 @@
       <view class="usespace">全品类通用</view>
       <view class="date">有效期：2019.1.1 ~ 2019.1.11</view>
     </view>
-  </view>
+  </view> -->
 </view>
