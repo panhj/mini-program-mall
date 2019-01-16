@@ -46,7 +46,6 @@ Page({
         categoryId: this.data.currentTypeId
       },
       success: res => {
-        console.log(res.data)
         if (res.data.code == 404) return that.setData({goods: []});
         if (res.data.code != 0) return wx.showModal({
           title: '提示',
@@ -76,7 +75,6 @@ Page({
       url: "https://api.it120.cc/panhjserve/shop/goods/category/all",
       data: {},
       success: res => {
-        console.log(res.data)
         if (res.data.code != 0) return wx.showModal({
           title: '提示',
           content: '获取商品分类失败',
@@ -90,6 +88,7 @@ Page({
         that.requestByType();
       }
     })
+    // get banner
     wx.request({
       url: 'https://api.it120.cc/panhjserve/banner/list',
       data: {

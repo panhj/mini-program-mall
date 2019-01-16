@@ -25,12 +25,12 @@ page {
   display: flex;
   justify-content: space-between;
   background-color: #fff;
-  padding: 20rpx 0;
 }
 .collect-bar .like {
   flex-grow: 1;
   text-align: center;
   font-size: 28rpx; line-height: 45rpx; color: #666;
+  padding: 20rpx 0;
 }
 .collect-bar .like .num {
   font-size: 34rpx; color: #b0424a;

@@ -6,7 +6,7 @@
   background-color: #ebebeb;
 }
 image {
-  background-color: rgba(177, 66, 74, 0.071);
+  /* background-color: rgba(177, 66, 74, 0.071); */
 }
 .banner-container, .search-container, .coupon-container, .type-container, .new-container, .image-container, .ad-container, .show-container, .tab-container {
   position: relative;
@@ -191,18 +191,18 @@ image {
 }
 .type-container .card .title {
   position: absolute;
-  top: 18rpx; left: 25rpx;
+  top: 18rpx; left: 28rpx;
   font-size: 30rpx;
 }
 .type-container .card .abc {
   position: absolute;
-  top: 55rpx; left: 25rpx;
+  top: 55rpx; left: 28rpx;
   font-size: 20rpx;
   color: #999;
 }
 .type-container .card .tip {
   position: absolute;
-  top: 85rpx; left: 25rpx;
+  top: 85rpx; left: 28rpx;
   font-size: 20rpx;
   padding: 3rpx 15rpx;
   background-color: #000;
@@ -216,6 +216,7 @@ image {
 .new-pannel {
   display: flex;
   justify-content: space-between;
+  padding: 0 10rpx;
 }
 .new-item {
   width: 230rpx;

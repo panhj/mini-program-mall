@@ -22,15 +22,52 @@ Page({
     })
   },
   bindAddmyLike() {
+    let that = this;
+    let token = wx.getStorageSync('token');
     if (!this.data.goodId) return false;
-    this.setData({
-      islike: !this.data.islike
-    })
-    wx.showToast({
-      title: '收藏(模拟)',
-      icon: 'success',
-      duration: 2000
-    });
+    if (this.data.islike) {
+      // 取消收藏
+      wx.request({
+        url: 'https://api.it120.cc/panhjserve/shop/goods/fav/delete',
+        data: {
+          goodsId: this.data.goodId,
+          token: token
+        },
+        success: res => {
+          if (res.data.code == 0) {
+            that.setData({
+              islike: !that.data.islike
+            })
+            wx.showToast({
+              title: '已取消收藏',
+              icon: 'success',
+              duration: 2000
+            });
+          }
+        }
+      })
+    } else {
+      // 收藏
+      wx.request({
+        url: 'https://api.it120.cc/panhjserve/shop/goods/fav/add',
+        data: {
+          goodsId: this.data.goodId,
+          token: token
+        },
+        success: res => {
+          if (res.data.code == 0) {
+            that.setData({
+              islike: !that.data.islike
+            })
+            wx.showToast({
+              title: '收藏成功',
+              icon: 'success',
+              duration: 2000
+            });
+          }
+        }
+      })
+    }
   },
   bindAddcart() {
     if (!this.data.goodId) return false;
@@ -72,6 +109,7 @@ Page({
       icon: 'loading',
       duration: 2000
     });
+    let token = wx.getStorageSync('token');
     let that = this;
     // 获取详情
     wx.request({
@@ -110,6 +148,25 @@ Page({
           icon: 'loading',
           duration: 2000
         });
+      }
+    })
+    // 检查是否收藏
+    wx.request({
+      url: 'https://api.it120.cc/panhjserve/shop/goods/fav/check',
+      data: {
+        goodsId: this.data.goodId,
+        token: token
+      },
+      success: res => {
+        if (res.data.code == -1) {
+          that.setData({
+            islike: false
+          })
+        } else if (res.data.code == 0) {
+          that.setData({
+            islike: true
+          })
+        }
       }
     })
   },

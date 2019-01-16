@@ -4,12 +4,12 @@
   <view class="user-name"><text>{{userName}}</text></view>
 </view>
 <view class="collect-bar">
-  <view class="like">
-    <view class="num">0</view>
+  <view class="like" bindtap='bindMyFavor' hover-class="active-gray">
+    <view class="num">{{favorNum}}</view>
     <view>我的收藏</view>
   </view>
   <view class="like">
-    <view class="num">14</view>
+    <view class="num">5</view>
     <view>消息通知</view>
   </view>
 </view>

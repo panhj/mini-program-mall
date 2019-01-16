@@ -6,15 +6,35 @@ Page({
    */
   data: {
     goods: [
-      {name:'xxxx', price: '299', num: '199'}
+      { goodsName:'xxxx', price: '299', num: '199'}
     ]
   },
-
+  bindToGood: function (e) {
+    let id = e.currentTarget.dataset.goodid
+    wx.navigateTo({
+      url: '/pages/goods/goods?id=' + id,
+    })
+  },
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    let token = wx.getStorageSync('token');
+    let that = this;
+    wx.request({
+      url: 'https://api.it120.cc/panhjserve/shop/goods/fav/list',
+      data: {
+        token: token
+      },
+      success: res => {
+        if (res.data.code == 0) {
+          let sum = 0;
+          that.setData({
+            goods: res.data.data
+          })
+        }
+      }
+    })
   },
 
   /**

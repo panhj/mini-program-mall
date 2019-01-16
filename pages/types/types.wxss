@@ -68,6 +68,10 @@ page {
   padding: 20rpx;
   padding-top:10rpx;
 }
+.content-container .nogoods {
+  text-align: center; color: #b0424a;
+  width: 100%; margin-top: 50rpx;
+}
 .item-pannel {
   width: 350rpx;
   padding: 20rpx; margin-bottom: 15rpx;

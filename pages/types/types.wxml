@@ -15,6 +15,7 @@
   <view class="banner"><image src="{{bannerPic}}"></image></view>
 </view>
 <view class="content-container">
+  <view class="nogoods" hidden="{{goods.length}}"><text>暂无商品</text></view>
   <view class="item-pannel" hover-class='active-gray' 
   wx:for="{{goods}}" wx:key="unique" 
   data-goodid="{{item.id}}" bindtap='bindToGood'>

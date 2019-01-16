@@ -27,14 +27,14 @@
         <view class="card" bindtap='navToDetail'>
           <text class="tip">满包邮</text>
           <text class="title">断码清仓</text>
-          <text class="abc">NEW ARRIVAL</text>
-          <image src=""></image>
+          <text class="abc">LIMITED</text>
+          <image src="/image/limited.png"></image>
         </view>
         <view class="card" bindtap='navToList'>
-          <text class="tip">满包邮</text>
-          <text class="title">断码清仓</text>
+          <text class="tip">满就减</text>
+          <text class="title">新品促销</text>
           <text class="abc">NEW ARRIVAL</text>
-          <image src=""></image>
+          <image src="/image/new.png"></image>
         </view>
       </view>
       <view class="coupon-right">
@@ -50,7 +50,7 @@
       <text class="title">{{item.type}}</text>
       <text class="abc">{{item.en}}</text>
       <text class="tip">查看分类</text>
-      <image src=""></image>
+      <image src="{{item.pic}}"></image>
     </view>
   </view>
   <view class="new-container">

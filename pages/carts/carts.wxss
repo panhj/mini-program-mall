@@ -7,6 +7,15 @@ page {
   min-height: 600rpx;
   padding-bottom: 120rpx;
 }
+.carts-container .nocards {
+  width: 100%; margin-top: 200rpx;
+  text-align: center; 
+}
+.carts-container .nocards navigator {
+  font-size: 34rpx; color: #fff; display: inline;
+  padding: 5rpx 15rpx; border-radius: 5rpx;
+  background-color: #b0424a;
+}
 .card {
   display: flex;
   justify-content: space-between;

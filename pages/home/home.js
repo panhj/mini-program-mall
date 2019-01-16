@@ -12,12 +12,12 @@ Page({
       { num: 99, sum: 899 },
     ],
     types: [
-      { type: '高跟鞋', en: 'HIGH HEELED' },
-      { type: '平底鞋', en: 'FLAT SHOES' },
-      { type: '凉鞋', en: 'SANDALS' },
-      { type: '坡跟鞋', en: 'WEDGES' },
-      { type: '运动鞋', en: 'SPORTS' },
-      { type: '靴子', en: 'BOOTS' },
+      { type: '高跟鞋', en: 'HIGH HEELED', pic: "/image/high.png" },
+      { type: '平底鞋', en: 'FLAT SHOES', pic: "/image/02.png" },
+      { type: '凉鞋', en: 'SANDALS', pic: "/image/03.png" },
+      { type: '坡跟鞋', en: 'WEDGES', pic: "/image/04.png" },
+      { type: '运动鞋', en: 'SPORTS', pic: "/image/05.png" },
+      { type: '靴子', en: 'BOOTS', pic: "/image/06.png" },
     ],
     news: [
       { date: '11月11日', money: 299 },
