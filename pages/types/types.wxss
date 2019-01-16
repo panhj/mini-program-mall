@@ -47,7 +47,7 @@ page {
   color: #fff; text-align: center;
   font-size: 30rpx;
 }
-.type-item:nth-child(1) {
+.type-active {
   border-bottom: 6rpx solid #fff;
 }
 .banner {
@@ -57,10 +57,9 @@ page {
 }
 .banner image {
   width: 650rpx; height: 400rpx;
-  background-color: #eee;
+  background-color: #fff;
   border-radius: 10rpx;
 }
-
 .content-container {
   display: flex;
   justify-content: space-between;
