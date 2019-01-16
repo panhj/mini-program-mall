@@ -81,7 +81,7 @@ page {
 }
 .btn-delete {
   right: 0;
-  width: 50rpx;
+  width: 70rpx;
 }
 .btn-delete .icon-delete {
   font-size: 36rpx; color: #b0424a;

@@ -1,7 +1,7 @@
 <!--pages/user/user.wxml-->
 <view class="header">
-  <view class="head-image"><image></image></view>
-  <view class="user-name"><text>我的用户名</text></view>
+  <view class="head-image"><image src="{{userPic}}"></image></view>
+  <view class="user-name"><text>{{userName}}</text></view>
 </view>
 <view class="collect-bar">
   <view class="like">

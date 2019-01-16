@@ -1,22 +1,7 @@
 //app.js
 App({
-  carts: [{
-    id: 1,
-    name: 'xxxx',
-    price: 555,
-    size: 23,
-    num: 1,
-    selected: true
-  }, {
-      id: 2,
-      name: '撒大声地爱神的箭昂首的骄傲是假的撒',
-      price: 665,
-      size: 63,
-      num: 4,
-      selected: false
-   }],
-  onLaunch: function () {
-    wx.removeStorageSync('token');
+  carts: [],
+  login: function () {
     // 登录
     wx.login({
       success: res => {
@@ -43,14 +28,35 @@ App({
               })
               return;
             }
-            console.log(res.data.data.token);
-            console.log(res.data.data.uid);
             wx.setStorageSync('token', res.data.data.token)
             wx.setStorageSync('uid', res.data.data.uid)
+            console.log(res.data.data.token);
+            console.log(wx.getStorageSync('token'));
           }
         })
       }
     })
+  },
+  onLaunch: function () {
+    wx.removeStorageSync('token');
+    let token = wx.getStorageSync('token');
+    let that = this;
+    if (!token) {
+      this.login();
+    } else {
+      wx.request({
+        url: 'https://api.it120.cc/panhjserve/user/check-token',
+        data: {
+          token: token
+        },
+        success: function (res) {
+          if(res.data.code == 2000) {
+            that.login();
+          }
+        }
+      })
+    }
+    
     /**
      * 初次加载判断网络情况
      * 无网络状态下根据实际情况进行调整

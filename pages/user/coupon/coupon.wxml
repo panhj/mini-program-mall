@@ -16,21 +16,8 @@
     <view class="cannotuse" hidden="{{switch != 2}}"><view>已过期</view></view>
     <view class="text-pannel">
       <view class="title">优惠券</view>
-      <view class="usespace">全品类通用</view>
-      <view class="date">有效期：{{item.dateEnd}}</view>
+      <view class="usespace">全品类通用满¥{{item.moneyHreshold}}</view>
+      <view class="date">有效期至：{{item.dateEnd}}</view>
     </view>
   </view>
-  <!-- <view class="card">
-    <view class="image"><image src="/image/couponun.png"></image></view>
-    <view class="image-text">
-      <view class="num"><text style="font-size:32rpx">¥</text><text>100</text></view>
-      <view class="usenow">立即使用 ></view>
-    </view>
-    <view class="cannotuse"><view>已使用</view></view>
-    <view class="text-pannel">
-      <view class="title">优惠券</view>
-      <view class="usespace">全品类通用</view>
-      <view class="date">有效期：2019.1.1 ~ 2019.1.11</view>
-    </view>
-  </view> -->
 </view>

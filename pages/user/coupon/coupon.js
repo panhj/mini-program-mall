@@ -38,6 +38,7 @@ Page({
         if (res.data.code != 0) return wx.showModal({
           title: '提示',
           content: '获取优惠券失败',
+          confirmColor: '#b0424a',
           showCancel: false
         })
         let coupons = res.data.data;
@@ -45,8 +46,8 @@ Page({
         let c1 = [];
         let c2 = [];
         let ccn0 = 0;
-        let ccn1 = 1;
-        let ccn2 = 2;
+        let ccn1 = 0;
+        let ccn2 = 0;
         coupons.map(function (value, index) {
           if(value.status == 0) {
             ccn0++;
@@ -61,7 +62,7 @@ Page({
             c2.push(value);
           }
         })
-        this.setData({
+        that.setData({
           coupons: c0,
           coupon0: c0,
           coupon1: c1,

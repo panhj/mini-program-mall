@@ -1,18 +1,24 @@
 // pages/user/user.js
+const app = getApp();
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-
+    userPic: "",
+    userName: " "
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    this.setData({
+      userPic: app.globalData.userInfo.avatarUrl,
+      userName: app.globalData.userInfo.nickName
+    })
+    console.log(this.data.userPic)
   },
 
   /**

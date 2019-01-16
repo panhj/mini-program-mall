@@ -79,7 +79,6 @@ Page({
         that.setData({
           coupons: couponList
         })
-        console.log(that.data.coupons)
       }
     })
   },
@@ -107,6 +106,7 @@ Page({
           wx.showModal({
             title: '提示',
             content: '不能重复领取',
+            confirmColor: '#b0424a',
             showCancel: false
           })
         }
