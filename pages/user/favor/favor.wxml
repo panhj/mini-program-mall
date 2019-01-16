@@ -1,0 +1,11 @@
+<!--pages/user/favor/favor.wxml-->
+<view class="content-container">
+  <view class="item-pannel" wx:for="{{goods}}" wx:key="unique">
+    <view class="img"><image></image></view>
+    <view class="title"><text>{{item.name}}</text></view>
+    <view class="bot">
+      <text class="price">¥ {{item.price}}</text>
+      <text class="num">月售：{{item.num}}</text>
+    </view>
+  </view>
+</view>

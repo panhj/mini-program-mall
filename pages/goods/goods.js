@@ -96,13 +96,12 @@ Page({
         res.data.data.properties.map(function (value, index) {
           _sizes.push('中国码：女' + value.name)
         })
-        // 过滤出第一张图片为详情图片
-        var _detailPic = res.data.data.pics.splice(0,1)[0];
+        // res.data.data.content.split('\"')[1]
         that.setData({
           good: res.data.data.basicInfo,
           pics: res.data.data.pics,
           sizes: _sizes,
-          detailPic: _detailPic
+          detailPic: res.data.data.content
         })
       },
       fail(e) {

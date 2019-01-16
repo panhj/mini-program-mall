@@ -82,12 +82,12 @@ image {
   position: relative;
   top: -50rpx;
   min-height: 2600rpx;
-  background-color: rgb(255, 168, 7);
+  background-color: #ddd;
   padding-bottom: 100rpx;
 }
 .details-container image {
   width: 100%;
-  heihgt: 2000rpx;
+  height: 2000rpx;
 }
 .foot-bar {
   position: fixed;

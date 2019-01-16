@@ -41,7 +41,8 @@
     </view>
   </view>
   <view class="details-container" style="text-align:center;">
-    <image mode="widthFix" src="{{detailPic.pic}}"></image>
+    <!-- <image mode="widthFix" src="{{detailPic}}"></image> -->
+    <rich-text nodes="{{detailPic}}"></rich-text>
   </view>
   <view class="foot-bar">
     <view class="cart" bindtap='bindSwitchTocart'><text class="iconfont icon-cart"></text></view>

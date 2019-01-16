@@ -6,13 +6,13 @@
 	"setting": {
 		"urlCheck": true,
 		"es6": true,
-		"postcss": true,
+		"postcss": false,
 		"minified": true,
 		"newFeature": true,
 		"autoAudits": false
 	},
 	"compileType": "miniprogram",
-	"libVersion": "2.0.4",
+	"libVersion": "2.5.0",
 	"appid": "wxeb0ee3086498c755",
 	"projectname": "myapp",
 	"debugOptions": {
