@@ -98,7 +98,8 @@ App({
     })
   },
   globalData: {
-    userInfo: null
+    userInfo: null,
+    typeIndex: -1
   },
   registerUser: function () {
     let that = this;

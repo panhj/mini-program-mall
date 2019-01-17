@@ -1,4 +1,5 @@
 // pages/types/types.js
+const app = getApp();
 Page({
 
   /**
@@ -69,6 +70,8 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+    let index = 0;
+    if (app.globalData.typeIndex) index = app.globalData.typeIndex; 
     let that = this;
     // 获取类别
     wx.request({
@@ -83,7 +86,7 @@ Page({
         })
         that.setData({
           types: res.data.data,
-          currentTypeId:res.data.data[0].id
+          currentTypeId: res.data.data[index].id
         })
         that.requestByType();
       }
@@ -115,7 +118,14 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-
+    let index = 0;
+    if (app.globalData.typeIndex == -1) return false;
+    index = app.globalData.typeIndex;
+    this.setData({
+      currentTypeId: this.data.types[index].id
+    })
+    this.requestByType();
+    app.globalData.typeIndex = -1;
   },
 
   /**

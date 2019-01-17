@@ -24,20 +24,20 @@
     </scroll-view>
     <view class="coupon-row">
       <view class="coupon-left">
-        <view class="card" bindtap='navToDetail'>
+        <view class="card" data-title="断码清仓" bindtap='navToList'>
           <text class="tip">满包邮</text>
           <text class="title">断码清仓</text>
           <text class="abc">LIMITED</text>
           <image src="/image/limited.png"></image>
         </view>
-        <view class="card" bindtap='navToList'>
+        <view class="card" data-title="新品促销" bindtap='navToList'>
           <text class="tip">满就减</text>
           <text class="title">新品促销</text>
           <text class="abc">NEW ARRIVAL</text>
           <image src="/image/new.png"></image>
         </view>
       </view>
-      <view class="coupon-right">
+      <view class="coupon-right" data-title="限时秒杀" bindtap='navToList'>
         <text style="flex-grow:1"></text>
         <text>-50%</text>
         <text>限时秒杀</text>
@@ -46,19 +46,19 @@
     </view>
   </view>
   <view class="type-container">
-    <view class="card" wx:for="{{types}}" wx:key="unique">
-      <text class="title">{{item.type}}</text>
-      <text class="abc">{{item.en}}</text>
+    <view class="card" wx:for="{{types}}" wx:key="unique" data-typeindex="{{index}}" bindtap='bindToType'>
+      <text class="title">{{item.name}}</text>
+      <text class="abc">{{item.type}}</text>
       <text class="tip">查看分类</text>
-      <image src="{{item.pic}}"></image>
+      <image src="{{item.icon}}"></image>
     </view>
   </view>
   <view class="new-container">
     <view class="new-pannel">
-      <view class="new-item" wx:for="{{news}}" wx:key="unique">
-        <image src=""></image>
-        <text class="title">{{item.date}}上新</text>
-        <text class="money">RMB {{item.money}}</text>
+      <view class="new-item" wx:for="{{news}}" wx:key="unique" data-id="{{item.id}}" bindtap='bindToGood'>
+        <image src="{{item.pic}}"></image>
+        <text class="title">{{item.dateAdd}}上新</text>
+        <text class="money">RMB {{item.minPrice}}</text>
         <view class="tip"><text>查看宝贝</text></view>
       </view>
     </view>
@@ -88,13 +88,13 @@
       <view><text>HOT SALE</text></view>
     </view>
     <view class="goods-pannel">
-      <view class="goods-item" wx:for="{{goods}}" wx:key="unique">
-        <image></image>
+      <view class="goods-item" wx:for="{{goods}}" wx:key="unique" data-id="{{item.id}}" bindtap='bindToGood'>
+        <image src="{{item.pic}}"></image>
         <view class="title"><text>{{item.name}}</text></view>
         <view class="foot">
-          <text class="rmb">RMB ¥{{item.price}}</text>
-          <text class="old-rmb">¥{{item.oldPrice}}</text>
-          <text class="num">销量（{{item.num}}）</text>
+          <text class="rmb">RMB ¥{{item.minPrice}}</text>
+          <text class="old-rmb">¥{{item.originalPrice}}</text>
+          <text class="num">销量（{{item.numberOrders}}）</text>
         </view>
       </view>
     </view>
@@ -105,8 +105,16 @@
       <view><text>NEW ARRIVAL</text></view>
     </view>
     <view class="goods-pannel">
-      <view class="newmore-item" wx:for="{{newmores}}" wx:key="unique">
-        <image src=""></image>
+      <view class="newmore-item" wx:for="{{newmores1}}" wx:key="unique" data-id="{{item.id}}" bindtap='bindToGood'>
+        <image src="{{item.pic}}"></image>
+      </view>
+      <view class="newmore-item newmore-center">
+        <view>VIEW MORE</view>
+        <view>查看更多</view>
+        <view>···</view>
+      </view>
+      <view class="newmore-item" wx:for="{{newmores2}}" wx:key="unique" data-id="{{item.id}}" bindtap='bindToGood'>
+        <image src="{{item.pic}}"></image>
       </view>
     </view>
   </view>
@@ -115,14 +123,14 @@
   </view>
   <view class="tab-container">
     <view class="tab-pannel">
-      <view class="tab-item tab-active">钻石买家最爱</view>
-      <view class="tab-item">收藏排行</view>
-      <view class="tab-item">销量排行</view>
+      <view class="tab-item {{currentTab == 1 ? 'tab-active' : ''}}" data-tab="1" bindtap='bindTabTo'>钻石买家最爱</view>
+      <view class="tab-item {{currentTab == 2 ? 'tab-active' : ''}}" data-tab="2" bindtap='bindTabTo'>收藏排行</view>
+      <view class="tab-item {{currentTab == 3 ? 'tab-active' : ''}}" data-tab="3" bindtap='bindTabTo'>销量排行</view>
     </view>
     <view class="tabgoods-pannel">
-      <image src=""></image>
-      <image src=""></image>
-      <image src=""></image>
+      <image src="{{tabGoods[0].pic}}"></image>
+      <image src="{{tabGoods[1].pic}}"></image>
+      <image src="{{tabGoods[2].pic}}"></image>
     </view>
     <view class="footicon-pannel">
       <view class="footicon">

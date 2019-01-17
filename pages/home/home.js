@@ -25,7 +25,7 @@ Page({
       { date: '11月11日', money: 499 },
     ],
     goods: [
-      { name: '这是关于一款超级无敌坑人的高跟鞋的说明', price: '299', oldPrice: '1299', num: '9999' },
+      { name: 'XXXXXXXXXXXXXXXXXXXXX', price: '299', oldPrice: '1299', num: '9999' },
       { name: 'SAHDSAJDIOASIODJIOASD', price: '299', oldPrice: '1299', num: '9999' },
       { name: 'SAHDSAJDIOASIODJIOASD', price: '299', oldPrice: '1299', num: '9999' },
       { name: 'SAHDSAJDIOASIODJIOASD', price: '299', oldPrice: '1299', num: '9999' },
@@ -40,10 +40,12 @@ Page({
       { src: 'http://xxx' },
       { src: 'http://xxx' },
       { src: 'http://xxx' },
-    ]
+    ],
+    currentTab: 1
   },
   onLoad: function () {
     let that = this;
+    // get banner
     wx.request({
       url: 'https://api.it120.cc/panhjserve/banner/list',
       data: {
@@ -59,6 +61,7 @@ Page({
         console.log(that.data.banners)
       }
     })
+    // get coupon
     wx.request({
       url: 'https://api.it120.cc/panhjserve/discounts/coupons',
       data: {
@@ -78,6 +81,46 @@ Page({
         })
         that.setData({
           coupons: couponList
+        })
+      }
+    })
+    // get category
+    wx.request({
+      url: "https://api.it120.cc/panhjserve/shop/goods/category/all",
+      data: {},
+      success: res => {
+        if (res.data.code != 0) return wx.showModal({
+          title: '提示',
+          content: '获取商品分类失败',
+          showCancel: false,
+          confirmColor: 'b0424a'
+        })
+        that.setData({
+          types: res.data.data,
+        })
+      }
+    })
+    // get goods news(3)/newMores(8)
+    wx.request({
+      url: 'https://api.it120.cc/panhjserve/shop/goods/list',
+      data: {
+        page: 1,
+        pageSize: 24
+      },
+      success: res => {
+        if(res.data.code != 0) return false;
+        let list = res.data.data;
+        list.map((value, index) => {
+          value.dateAdd = value.dateAdd.slice(5,7) + '月' + value.dateAdd.slice(8,10) + '日';
+        })
+        that.setData({
+          news: list.slice(0,3),
+          goods: list.slice(3,7),
+          newmores1: list.slice(7, 11),
+          newmores2: list.slice(11, 15),
+          tabGoods1: list.slice(15, 18),
+          tabGoods2: list.slice(18, 21),
+          tabGoods3: list.slice(21, 24)
         })
       }
     })
@@ -118,14 +161,30 @@ Page({
       url: '/pages/goods/goods?id=' + event.currentTarget.dataset.id,
     })
   },
-  navToDetail(event) {
+  navToList(e) {
+    let title = e.currentTarget.dataset.title
     wx.navigateTo({
-      url: '/pages/goods/goods?data=cnm'
+      url: '/pages/list/list?title=' + title
     })
   },
-  navToList(event) {
+  bindToGood (e) {
+    let id = e.currentTarget.dataset.id;
     wx.navigateTo({
-      url: '/pages/list/list?data=cnm'
+      url: '/pages/goods/goods?id=' + id
     })
+  },
+  bindToType (e) {
+    let typeindex = e.currentTarget.dataset.typeindex;
+    app.globalData.typeIndex = typeindex;
+    wx.switchTab({
+      url: '/pages/types/types'
+    })
+  },
+  bindTabTo (e) {
+    let tab = e.currentTarget.dataset.tab;
+    this.setData({currentTab: tab});
+    if (tab == 1) this.setData({ tabGoods: this.data.tabGoods1 })
+    if (tab == 2) this.setData({ tabGoods: this.data.tabGoods2 })
+    if (tab == 3) this.setData({ tabGoods: this.data.tabGoods3 })
   }
 })
