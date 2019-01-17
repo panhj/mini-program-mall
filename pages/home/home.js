@@ -41,24 +41,32 @@ Page({
       { src: 'http://xxx' },
       { src: 'http://xxx' },
     ],
-    currentTab: 1
+    currentTab: 1,
+    keywords: "",
   },
   onLoad: function () {
     let that = this;
     // get banner
     wx.request({
       url: 'https://api.it120.cc/panhjserve/banner/list',
-      data: {
-        type: 1
-      },
+      data: {},
       header: {
         'content-type': 'application/json' // 默认值
       },
       success(res) {
-        that.setData({
-          banners: res.data.data
+        if (res.data.code != 0) return false;
+        let banners = [], adPics = [], sidePics = []
+        res.data.data.map( (value, index) => {
+          if (value.type == 'banner') banners.push(value);
+          if (value.type == 'adpic') adPics.push(value);
+          if (value.type == 'sidepic') sidePics.push(value);
         })
-        console.log(that.data.banners)
+        that.setData({
+          banners: banners,
+          adPics: adPics,
+          sidePics: sidePics
+        })
+        console.log(that.data)
       }
     })
     // get coupon
@@ -118,6 +126,7 @@ Page({
           goods: list.slice(3,7),
           newmores1: list.slice(7, 11),
           newmores2: list.slice(11, 15),
+          tabGoods: list.slice(15, 18),
           tabGoods1: list.slice(15, 18),
           tabGoods2: list.slice(18, 21),
           tabGoods3: list.slice(21, 24)
@@ -156,6 +165,17 @@ Page({
       }
     })
   },
+  setKeyWords (e) {
+    this.setData({
+      keywords: e.detail.value
+    })
+  },
+  bindSearch (e) {
+    let value = this.data.keywords;
+    wx.navigateTo({
+      url: '/pages/list/list?title=搜索&keywords=' + value
+    })
+  },
   tapBanner(event) {
     wx.navigateTo({
       url: '/pages/goods/goods?id=' + event.currentTarget.dataset.id,
@@ -163,8 +183,9 @@ Page({
   },
   navToList(e) {
     let title = e.currentTarget.dataset.title
+    let bar = e.currentTarget.dataset.bar || ""
     wx.navigateTo({
-      url: '/pages/list/list?title=' + title
+      url: '/pages/list/list?title=' + title + '&bar=' + bar
     })
   },
   bindToGood (e) {

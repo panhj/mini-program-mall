@@ -358,6 +358,7 @@ image {
   color: #555;
   height:65rpx;
   word-break: break-all;
+  overflow: hidden;
 }
 .goods-item .foot .rmb {
   font-size: 24rpx;
@@ -384,7 +385,14 @@ image {
 .newmore-item image {
   width: 100%; height: 100%;
 }
-
+.newmore-center {
+  text-align: center;
+  background-color: #b0424a;
+  color: #fff;
+}
+.newmore-center view:nth-child(1) {margin-top: 60rpx;font-size: 32rpx}
+.newmore-center view:nth-child(2) {margin-top: 12rpx;font-size: 26rpx}
+.newmore-center view:nth-child(3) {margin-top: 6rpx;font-size: 40rpx}
 .tab-container {
   padding: 20rpx 10rpx 20rpx 10rpx;
   margin-top: 20rpx;

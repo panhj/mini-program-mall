@@ -6,17 +6,33 @@ Page({
    */
   data: {
     goods: [
-      { name: '刺刀绣花设计Mbbcar原创设计中国风元素绣x as ds saas花保暖', price: 849.00, num: 124 },
-      { name: '刺刀绣花设计Mbbcar原创设计中国风元素绣花保暖', price: 849.00, num: 124 },
-      { name: '刺刀绣花设计Mbbcar原创设计中国风元素绣花保暖', price: 849.00, num: 124 },
-      { name: '刺刀绣花设计Mbbcar原创设计中国风元素绣花保暖', price: 849.00, num: 124 },
-      { name: '刺刀绣花设计Mbbcar原创设计中国风元素绣花保暖', price: 849.00, num: 124 },
-      { name: '刺刀绣花设计Mbbcar原创设计中国风元素绣花保暖', price: 849.00, num: 124 },
-      { name: '刺刀绣花设计Mbbcar原创设计中国风元素绣花保暖', price: 849.00, num: 124 },
-      { name: '刺刀绣花设计Mbbcar原创设计中国风元素绣花保暖', price: 849.00, num: 124 },
-    ]
+      { name: '-----------------------------', price: 849.00, num: 124 }, 
+    ],
+    searchWords: "",
+    bar: null
   },
-
+  bindToGood(e) {
+    let id = e.currentTarget.dataset.id;
+    wx.navigateTo({
+      url: '/pages/goods/goods?id=' + id
+    })
+  },
+  getGoodsList () {
+    let that = this;
+    wx.request({
+      url: 'https://api.it120.cc/panhjserve/shop/goods/list',
+      data: {
+        nameLike: this.data.searchWords || "",
+        barCode: this.data.bar || ""
+      },
+      success: res => {
+        if(res.data.code != 0) return false;
+        that.setData({
+          goods: res.data.data
+        })
+      }
+    })
+  },
   /**
    * 生命周期函数--监听页面加载
    */
@@ -24,6 +40,17 @@ Page({
     wx.setNavigationBarTitle({
       title: options.title
     })
+    if (options.keywords) {
+      this.setData({
+        searchWords: options.keywords
+      })
+    }
+    if (options.bar) {
+      this.setData({
+        bar: options.bar
+      })
+    }
+    this.getGoodsList();
   },
 
   /**

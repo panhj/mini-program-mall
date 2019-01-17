@@ -1,7 +1,6 @@
 // pages/types/types.js
 const app = getApp();
 Page({
-
   /**
    * 页面的初始数据
    */
@@ -40,6 +39,7 @@ Page({
     this.requestByType();
   },
   requestByType: function () {
+    if (!this.data.currentTypeId) return false;
     let that = this;
     wx.request({
       url: "https://api.it120.cc/panhjserve/shop/goods/list",
@@ -47,13 +47,7 @@ Page({
         categoryId: this.data.currentTypeId
       },
       success: res => {
-        if (res.data.code == 404) return that.setData({goods: []});
-        if (res.data.code != 0) return wx.showModal({
-          title: '提示',
-          content: '获取商品分类失败',
-          showCancel: false,
-          confirmColor: 'b0424a'
-        })
+        if (res.data.code != 0) return that.setData({ goods: [] });
         that.setData({
           goods: res.data.data
         })
@@ -71,7 +65,7 @@ Page({
    */
   onLoad: function (options) {
     let index = 0;
-    if (app.globalData.typeIndex) index = app.globalData.typeIndex; 
+    if (app.globalData.typeIndex != -1) index = app.globalData.typeIndex;
     let that = this;
     // 获取类别
     wx.request({
@@ -101,7 +95,7 @@ Page({
         let banners = res.data.data
         that.setData({
           banners: banners,
-          bannerPic: banners[0].picUrl
+          bannerPic: banners[index].picUrl
         })
       }
     })
@@ -119,10 +113,11 @@ Page({
    */
   onShow: function () {
     let index = 0;
-    if (app.globalData.typeIndex == -1) return false;
+    if (app.globalData.typeIndex == -1 || !this.data.currentTypeId) return false;
     index = app.globalData.typeIndex;
     this.setData({
-      currentTypeId: this.data.types[index].id
+      currentTypeId: this.data.types[index].id|| 0,
+      bannerPic: this.data.banners[index].picUrl || ""
     })
     this.requestByType();
     app.globalData.typeIndex = -1;

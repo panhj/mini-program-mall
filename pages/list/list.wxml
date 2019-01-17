@@ -1,7 +1,7 @@
 <!--pages/list/list.wxml-->
 <view class="search-container">
   <view class="input-pannel">
-    <input type="text" placeholder="列表..." maxlength="15" confirm-type="search"></input>
+    <input type="text" value="{{searchWords}}" placeholder="列表..." maxlength="15" confirm-type="search"></input>
     <view class="search-icon"><icon type="search" size="30rpx" color="#b0424a"></icon></view>
   </view>
   <view class="filter-pannel">
@@ -12,12 +12,12 @@
   </view>
 </view>
 <view class="content-container">
-  <view class="item-pannel" wx:for="{{goods}}" wx:key="unique">
-    <view class="img"><image></image></view>
+  <view class="item-pannel" hover-class='active-gray' wx:for="{{goods}}" wx:key="unique" data-id="{{item.id}}" bindtap='bindToGood'>
+    <view class="img"><image src="{{item.pic}}"></image></view>
     <view class="title"><text>{{item.name}}</text></view>
     <view class="bot">
-      <text class="price">¥ {{item.price}}</text>
-      <text class="num">月售：{{item.num}}</text>
+      <text class="price">¥ {{item.minPrice}}</text>
+      <text class="num">月售：{{item.numberOrders}}</text>
     </view>
   </view>
 </view>

@@ -2,8 +2,8 @@
 <view class="container">
   <view class="search-container">
     <view class="search-bar">
-      <input type="text" placeholder="更多惊喜等你发现..." maxlength="15" confirm-type="search"></input>
-      <view class="search-icon"><icon type="search" size="30rpx" color="#b0424a"></icon></view>
+      <input type="text" value="{{keywords}}" bindinput='setKeyWords' placeholder="更多惊喜等你发现..." maxlength="15" confirm-type="search" bindconfirm='bindSearch'></input>
+      <view class="search-icon" bindtap='bindSearch'><icon type="search" size="30rpx" color="#b0424a"></icon></view>
     </view>
   </view>
   <view class="banner-container">
@@ -24,20 +24,20 @@
     </scroll-view>
     <view class="coupon-row">
       <view class="coupon-left">
-        <view class="card" data-title="断码清仓" bindtap='navToList'>
+        <view class="card" data-title="断码清仓" data-bar="limit" bindtap='navToList'>
           <text class="tip">满包邮</text>
           <text class="title">断码清仓</text>
           <text class="abc">LIMITED</text>
           <image src="/image/limited.png"></image>
         </view>
-        <view class="card" data-title="新品促销" bindtap='navToList'>
+        <view class="card" data-title="新品促销" data-bar="new" bindtap='navToList'>
           <text class="tip">满就减</text>
           <text class="title">新品促销</text>
           <text class="abc">NEW ARRIVAL</text>
           <image src="/image/new.png"></image>
         </view>
       </view>
-      <view class="coupon-right" data-title="限时秒杀" bindtap='navToList'>
+      <view class="coupon-right" data-title="限时秒杀" data-bar="kill" bindtap='navToList'>
         <text style="flex-grow:1"></text>
         <text>-50%</text>
         <text>限时秒杀</text>
@@ -64,7 +64,7 @@
     </view>
   </view>
   <view class="image-container">
-    <image class="ad-image" scr=""></image>
+    <image class="ad-image" src="{{adPics[0].picUrl}}"></image>
   </view>
   <view class="ad-container ad-l">
     <view class="ad-text-pannel">
@@ -72,7 +72,7 @@
       <text class="msg">夏日圆舞曲奏响仲夏夜的梦</text>
       <view class="tip"><text>查看宝贝</text></view>
     </view>
-    <image src=""></image>
+    <image src="{{sidePics[0].picUrl}}"></image>
   </view>
   <view class="ad-container ad-r">
     <view class="ad-text-pannel">
@@ -80,7 +80,7 @@
       <text class="msg">夏日圆舞曲奏响仲夏夜的梦</text>
       <view class="tip"><text>查看宝贝</text></view>
     </view>
-    <image src=""></image>
+    <image src="{{sidePics[1].picUrl}}"></image>
   </view>
   <view class="show-container">
     <view class="head">
@@ -119,7 +119,7 @@
     </view>
   </view>
   <view class="image-container">
-    <image class="ad-image" scr=""></image>
+    <image class="ad-image" src="{{adPics[1].picUrl}}"></image>
   </view>
   <view class="tab-container">
     <view class="tab-pannel">
