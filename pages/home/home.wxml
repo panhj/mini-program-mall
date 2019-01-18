@@ -55,7 +55,7 @@
   </view>
   <view class="new-container">
     <view class="new-pannel">
-      <view class="new-item" wx:for="{{news}}" wx:key="unique" data-id="{{item.id}}" bindtap='bindToGood'>
+      <view class="new-item active-ddd" wx:for="{{news}}" wx:key="unique" data-id="{{item.id}}" bindtap='bindToGood'>
         <image src="{{item.pic}}"></image>
         <text class="title">{{item.dateAdd}}上新</text>
         <text class="money">RMB {{item.minPrice}}</text>
@@ -68,16 +68,16 @@
   </view>
   <view class="ad-container ad-l">
     <view class="ad-text-pannel">
-      <text class="title">「仲夏夜之梦」</text>
-      <text class="msg">夏日圆舞曲奏响仲夏夜的梦</text>
+      <text class="title">「黑色反绒皮」</text>
+      <text class="msg">高贵反绒皮材质气质高跟</text>
       <view class="tip"><text>查看宝贝</text></view>
     </view>
     <image src="{{sidePics[0].picUrl}}"></image>
   </view>
   <view class="ad-container ad-r">
     <view class="ad-text-pannel">
-      <text class="title">「仲夏夜之梦」</text>
-      <text class="msg">夏日圆舞曲奏响仲夏夜的梦</text>
+      <text class="title">「小清新之选」</text>
+      <text class="msg">文艺青年的夏日多色之旅</text>
       <view class="tip"><text>查看宝贝</text></view>
     </view>
     <image src="{{sidePics[1].picUrl}}"></image>
@@ -88,7 +88,7 @@
       <view><text>HOT SALE</text></view>
     </view>
     <view class="goods-pannel">
-      <view class="goods-item" wx:for="{{goods}}" wx:key="unique" data-id="{{item.id}}" bindtap='bindToGood'>
+      <view class="goods-item  active-ddd" wx:for="{{goods}}" wx:key="unique" data-id="{{item.id}}" bindtap='bindToGood'>
         <image src="{{item.pic}}"></image>
         <view class="title"><text>{{item.name}}</text></view>
         <view class="foot">
@@ -128,9 +128,9 @@
       <view class="tab-item {{currentTab == 3 ? 'tab-active' : ''}}" data-tab="3" bindtap='bindTabTo'>销量排行</view>
     </view>
     <view class="tabgoods-pannel">
-      <image src="{{tabGoods[0].pic}}"></image>
-      <image src="{{tabGoods[1].pic}}"></image>
-      <image src="{{tabGoods[2].pic}}"></image>
+      <image src="{{tabGoods[0].pic}}" data-id="{{tabGoods[0].id}}" bindtap='bindToGood'></image>
+      <image src="{{tabGoods[1].pic}}" data-id="{{tabGoods[1].id}}" bindtap='bindToGood'></image>
+      <image src="{{tabGoods[2].pic}}" data-id="{{tabGoods[2].id}}" bindtap='bindToGood'></image>
     </view>
     <view class="footicon-pannel">
       <view class="footicon">

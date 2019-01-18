@@ -1,6 +1,6 @@
 <!--pages/user/favor/favor.wxml-->
 <view class="content-container">
-  <view class="item-pannel" 
+  <view class="item-pannel active-ddd" 
   wx:for="{{goods}}" wx:key="unique"
   data-goodid="{{item.goodsId}}" bindtap='bindToGood'>
     <view class="img"><image src="{{item.pic}}"></image></view>

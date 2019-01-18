@@ -101,6 +101,7 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+    wx.showToast({ icon: 'loading' });
     this.setData({
       goodId: options.id
     })
@@ -121,7 +122,7 @@ Page({
         'content-type': 'application/json' // 默认值
       },
       success(res) {
-        console.log(res.data);
+        wx.hideToast();
         if(res.data.code != 0) {
           return wx.showToast({
             title: '获取失败',

@@ -5,9 +5,7 @@ Page({
    * 页面的初始数据
    */
   data: {
-    goods: [
-      { name: '-----------------------------', price: 849.00, num: 124 }, 
-    ],
+    goods: [],
     searchWords: "",
     bar: null
   },
@@ -18,6 +16,7 @@ Page({
     })
   },
   getGoodsList () {
+    wx.showToast({ icon: 'loading',title: 'loading'});
     let that = this;
     wx.request({
       url: 'https://api.it120.cc/panhjserve/shop/goods/list',
@@ -26,6 +25,7 @@ Page({
         barCode: this.data.bar || ""
       },
       success: res => {
+        wx.hideToast();
         if(res.data.code != 0) return false;
         that.setData({
           goods: res.data.data

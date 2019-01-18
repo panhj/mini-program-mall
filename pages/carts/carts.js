@@ -9,6 +9,12 @@ Page({
     selectedAll: true,
     total: 0,
   },
+  bindToGood(e) {
+    let id = e.currentTarget.dataset.id;
+    wx.navigateTo({
+      url: '/pages/goods/goods?id=' + id
+    })
+  },
   bindReduce (e) {
     let index = e.currentTarget.dataset.index;
     let newGoods = this.data.goods;

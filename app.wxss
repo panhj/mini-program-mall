@@ -18,6 +18,9 @@ view {
 .active-fffa {
   background-color:rgba(248, 248, 248, .2) !important;
 }
+.active-ddd:active {
+  background-color: rgb(246, 246, 246);
+}
 @font-face {
   font-family: 'iconfont';  /* project id 997764 */
   src: url('//at.alicdn.com/t/font_997764_c3p9d01s1pt.eot');

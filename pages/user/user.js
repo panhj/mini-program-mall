@@ -52,7 +52,22 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-
+    let token = wx.getStorageSync('token');
+    let that = this;
+    wx.request({
+      url: 'https://api.it120.cc/panhjserve/shop/goods/fav/list',
+      data: {
+        token: token
+      },
+      success: res => {
+        if (res.data.code == 0) {
+          let sum = 0;
+          that.setData({
+            favorNum: res.data.data.length
+          })
+        }
+      }
+    })
   },
 
   /**

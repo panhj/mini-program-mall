@@ -5,9 +5,7 @@ Page({
    * 页面的初始数据
    */
   data: {
-    goods: [
-      { goodsName:'xxxx', price: '299', num: '199'}
-    ]
+    goods: []
   },
   bindToGood: function (e) {
     let id = e.currentTarget.dataset.goodid
@@ -19,6 +17,7 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+    wx.showToast({ icon: 'loading', title: 'loading' });
     let token = wx.getStorageSync('token');
     let that = this;
     wx.request({
@@ -27,6 +26,7 @@ Page({
         token: token
       },
       success: res => {
+        wx.hideToast();
         if (res.data.code == 0) {
           let sum = 0;
           that.setData({

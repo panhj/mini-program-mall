@@ -9,23 +9,12 @@ Page({
     types: [
       { name: '高跟鞋' },
       { name: '平底鞋' },
+      { name: '凉鞋' },
+      { name: '马丁靴' },
       { name: '运动鞋' },
-      { name: '靴子' },
-      { name: '拖鞋' },
-      { name: '运动鞋' },
-      { name: '靴子' },
-      { name: '拖鞋' },
+      { name: '靴子' }
     ],
-    goods: [
-      { name: '刺刀绣花设计Mbbcar原创设计中国风元素绣花加厚保暖', minPrice: 849.00, stores: 124 },
-      { name: '刺刀绣花设计Mbbcar原创设计中国风元素绣花加厚保暖', minPrice: 849.00, stores: 124 },
-      { name: '刺刀绣花设计Mbbcar原创设计中国风元素绣花加厚保暖', minPrice: 849.00, stores: 124 },
-      { name: '刺刀绣花设计Mbbcar原创设计中国风元素绣花加厚保暖', minPrice: 849.00, stores: 124 },
-      { name: '刺刀绣花设计Mbbcar原创设计中国风元素绣花加厚保暖', minPrice: 849.00, stores: 124 },
-      { name: '刺刀绣花设计Mbbcar原创设计中国风元素绣花加厚保暖', minPrice: 849.00, stores: 124 },
-      { name: '刺刀绣花设计Mbbcar原创设计中国风元素绣花加厚保暖', minPrice: 849.00, stores: 124 },
-      { name: '刺刀绣花设计Mbbcar原创设计中国风元素绣花加厚保暖', minPrice: 849.00, stores: 124 },
-    ],
+    goods: [],
     banners: [],
     bannerPic: ""
   },
@@ -39,6 +28,8 @@ Page({
     this.requestByType();
   },
   requestByType: function () {
+    wx.showToast({ icon: 'loading', title: 'loading' });
+    this.setData({isload: true});
     if (!this.data.currentTypeId) return false;
     let that = this;
     wx.request({
@@ -47,9 +38,11 @@ Page({
         categoryId: this.data.currentTypeId
       },
       success: res => {
+        wx.hideToast();
+        this.setData({ isload: false });
         if (res.data.code != 0) return that.setData({ goods: [] });
         that.setData({
-          goods: res.data.data
+          goods: res.data.data,
         })
       }
     })

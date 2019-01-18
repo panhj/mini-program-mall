@@ -22,13 +22,13 @@ image {
   background-color: #fff;
 }
 .card-container .head-pannel {
-  padding-bottom: 20rpx;
+  padding-bottom: 35rpx;
   background-color: #fff;
 }
 .card-container .head {
   width: 100%;
   padding: 10rpx;
-  box-shadow: 0 0 30rpx 0 rgba(0, 0, 0, 0.3)
+  box-shadow: 0 0 50rpx 0 rgba(0, 0, 0, 0.18)
 }
 .head view {
   text-align: center;
@@ -49,14 +49,14 @@ image {
   font-size: 28rpx; color: #888; 
 }
 .content .msg text{
-  line-height: 80rpx;
+  line-height: 60rpx;
   padding: 20rpx 20rpx;
 }
 .content .tip-pannel {
   display: flex;
   justify-content: space-between;
   font-size: 30rpx; color: #666;
-  padding: 20rpx 40rpx 50rpx 40rpx;
+  padding: 15rpx 40rpx 50rpx 40rpx;
 }
 .tip-item icon, .tip-item text{
   vertical-align: middle;

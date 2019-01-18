@@ -26,6 +26,7 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+    wx.showToast({ icon: 'loading', title: 'loading' });
     let that = this;
     let _token = wx.getStorageSync('token');
     wx.request({
@@ -34,6 +35,7 @@ Page({
         token: _token
       },
       success: function (res) {
+        wx.hideToast();
         console.log(res);
         if (res.data.code != 0) return wx.showModal({
           title: '提示',
