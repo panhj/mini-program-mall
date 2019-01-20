@@ -221,6 +221,7 @@ image {
 .new-item {
   width: 230rpx;
   text-align: center;
+  padding-bottom: 15rpx;
 }
 .new-item image {
   display: block;

@@ -12,7 +12,7 @@
       data-typeid="{{item.id}}" data-index="{{index}}" bindtap='bindTabType'><text>{{item.name}}</text></view>
     </scroll-view>
   </view>
-  <view class="banner"><image class="{{isload ? 'anihide' : ''}}" src="{{bannerPic}}"></image></view>
+  <view class="banner"><image src="{{bannerPic}}"></image></view>
 </view>
 <view class="content-container">
   <view class="nogoods" hidden="{{goods.length}}"><text>暂无商品</text></view>

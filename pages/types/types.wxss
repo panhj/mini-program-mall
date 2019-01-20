@@ -4,7 +4,7 @@ page {
 }
 .anihide {
   visibility: hidden;
-  opacity: 0;
+  opacity: 0.8;
 }
 .header-container {
   position: relative;
@@ -21,7 +21,7 @@ page {
 .blur-bg image {
   width: 100%; height: 100%;
   filter: blur(16px);
-  transition: all .3s
+  transition: all 1s
 }
 .header {
   position: fixed;
